@@ -1,14 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@font-face {
+  font-family: 'alte haas grotesk';
+  src: url('./fonts/altehaasgrotesk/altehaasgroteskbold-webfont.woff2') format('woff2'),
+       url('./fonts/altehaasgrotesk/altehaasgroteskbold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'alte haas grotesk';
+  src: url('./fonts/altehaasgrotesk/altehaasgroteskregular-webfont.woff2') format('woff2'),
+       url('./fonts/altehaasgrotesk/altehaasgroteskregular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'neue montreal';
+  src: url('./fonts/neuemontreal/PPNeueMontreal-Bold.woff2') format('woff2'),
+       url('./fonts/neuemontreal/PPNeueMontreal-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'neue montreal';
+  src: url('./fonts/neuemontreal/PPNeueMontreal-Medium.woff2') format('woff2'),
+       url('./fonts/neuemontreal/PPNeueMontreal-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'neue montreal';
+  src: url('./fonts/neuemontreal/PPNeueMontreal-Book.woff2') format('woff2'),
+       url('./fonts/neuemontreal/PPNeueMontreal-Book.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
 
 
 body {
   --background: #F3F3F3;
   --card: #e7e6e4;
   --border: #292929;
-  --text: #222222;
+  --text: #33354D;
   --accent: #292929;
+  --font: 'neue montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;;
 
   margin: 0;
   font-family: Uncut Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -38,7 +80,7 @@ body {
   justify-content: space-between;
   background-color: transparent;
   padding: 2rem;
-  z-index: 99;
+  z-index: 1;
 }
 
 .nav span, .nav a {
@@ -46,6 +88,11 @@ body {
   text-align: left;
   font-weight: 500;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.nav img {
+  height: 30px;
 }
 
 @media (max-width: 1080px) {
@@ -549,7 +596,7 @@ body {
   overflow: auto;
   background-color: #000000cd;
   padding: 50px;
-  
+  z-index: 2;
 }
 
 @media (max-width: 1080px) {
@@ -564,6 +611,7 @@ body {
   text-align: center;
   background-color: var(--background);
   padding: 50px;
+  
 }
 
 @media (max-width: 1080px) {
@@ -592,7 +640,7 @@ body {
   width: 35px;
   height: 35px;
   margin: 20px;
-  z-index: 2;
+  z-index: 3;
 }
 @media (max-width: 840px) {
   .frame #back {
@@ -825,97 +873,121 @@ body {
   background-size: cover;
   position: relative;
   padding-top: 5rem;
+
+  background-color: #EBE2D9;
 }
 
-.home h1 {
-  text-align: center;
-  max-width: 400px;
-  margin: 6rem auto;
-  font-size: 48px;
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
-  font-style: normal;
+.home section.hero {
+  max-height: 840px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 0;
+  margin: 4rem 0;
 }
 
-.home h1 span{
-  font-family: "Pinyon Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 62px;
-  line-height: 1;
+.home section {
+  padding: 4rem 0;
 }
-.home h2 span {
-  font-family: "Pinyon Script", cursive;
-  font-weight: 400;
+
+.home section.hero h1 {
+
+  max-width: 1430px;
+  margin: 0 2rem;
+  line-height: 90%;
+  font-size: 8rem;
+  font-family: var(--font);
+  color: var(--text);
+  font-weight: normal;
   font-style: normal;
-  font-size: 48px;
-  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home section.hero h1 span {
+  width: fit-content;
+  padding-right: 50px;
 }
 
 .home h2 {
-  text-align: center;
-  max-width: 500px;
-  margin: 8rem auto;
-  font-size: 36px;
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
+  max-width: 1430px;
+  margin: 0 2rem;
+  font-size: 64px;
+  font-family: var(--font);
+  color: var(--text);
+  font-weight: normal;
   font-style: normal;
-
 }
 
-.home .hero {
-  display: flex;
-  justify-content: space-around;
-  align-items: end;
-  min-width: 1080px;
-  max-width: 1280px;
-  margin: 4rem auto;
-  overflow: visible;
-}
-
-.hello {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
-}
-
-.hello span{
+.home h4 {
+  text-align: left;
   font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 2rem;
+  font-weight: normal;
+}
 
-  color: #fff;
+.home img.hi {
+  display: inline;
+}
+
+.home img.arra {
+  margin: 0 2rem;
+  width: 10px;
 }
 
 
-.home .hero .desktop{
-  backdrop-filter: blur(16px) brightness(105%);
-  border-radius: 20px;
-  width: 60%;
-  border: 1px solid #3535356c;
-
-}
-
-.home .hero .desktop .dtnav {
-  padding: 1.5rem 2rem;
-}
-
-.home .hero .desktop .dthero{
-  height: 400px;background-color: #000000;
-}
-
-.home .hero .desktop .dtgradient {
-  background-color: #0000007f;
+.home img.examples {
   width: 100%;
-  height: 100%;
 }
 
+@media (max-width: 1080px) {
+  .home {
+    background-size: cover;
+    position: relative;
+    padding-top: 8rem;
+  
+    background-color: #EBE2D9;
+  }
+  .home section.hero h1{
+    justify-content: center;
+    font-size: 10vw;
+  }
+  .home section.hero h1 span {
+    width: fit-content;
+    padding: 0px 20px;
+  }
+  .home h4 {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .home img.arra {
+    margin: 0 auto;
+  }
 
+  .home h2 {
+    margin: 0 auto;
+    font-size: 6vw;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+}
 
-
-
-.home .hero img {
-  width: 100%;
+@media (max-width: 540px) {
+  .home section.hero h1{
+    justify-content: center;
+    font-size: 12vw;
+    margin: 0 1rem;
+  }
+  .home section.hero h1 span {
+    width: fit-content;
+    padding: 0px 10px;
+  }
 }
 
 .home .boxes {
@@ -923,6 +995,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  text-align: left;
   
 }
 
@@ -935,12 +1008,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  
+}
+
+.home .box .badge {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  height: 30px;
+  width: auto
+}
+
+.home .box.badge img {
+  
 }
 
 .home .box h3 {
   text-align: left;
-  font-size: 36px;
-  font-family: "Nanum Myeongjo", serif;
+  font-size: 32px;
+  font-family: var(--font);
   font-weight: 400;
   font-style: normal;
   padding-bottom: 2rem;
@@ -948,6 +1035,7 @@ body {
 
 .home .box p {
   padding-bottom: 2rem;
+  text-align: left;
 }
 
 
@@ -989,4 +1077,47 @@ body {
 .home .box img {
   height: 30px;
   padding-right: 10px;
+}
+
+@media (max-width: 1080px) {
+  .home .boxes {
+    flex-direction: column;
+    
+  }
+
+  .home .box {
+    width: 100%;
+    margin-bottom: 2rem;
+  } 
+}
+
+@media (max-width: 540px) {
+  .home .boxes {
+   padding: 1rem;
+    
+  }
+  
+  .home .box {
+   padding: 2rem;
+   margin-bottom: 1rem;
+  }
+  .home .box h3 {
+    font-size: 24px;
+  }
+  
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.footer p{
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
 }

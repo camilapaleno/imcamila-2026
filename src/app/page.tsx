@@ -4,9 +4,6 @@ import Image from "next/image";
 import Link from 'next/link'
 import styles from "@/page.module.css";
 import '@/app/globals.css';
-import dtnav from "@/image/dt_nav.png";
-import dtsky from "@/image/dt_sky.jpg";
-import dtmtn from "@/image/dt_mtn.png";
 import squarespace from "@/image/squarespace_logo.png";
 import nextjs from "@/image/nextjs_logo.png";
 import react from "@/image/react_logo.png";
@@ -14,70 +11,54 @@ import shopify from "@/image/shopify_logo.png";
 import adobe from "@/image/adobe_logo.png";
 import lottie from "@/image/lottie_logo.png";
 import blender from "@/image/blender_logo.png";
-import background from "@/image/bg_6.png";
-import { Parallax, ParallaxBanner, BannerLayer, ParallaxProvider } from 'react-scroll-parallax';
+import background from "@/image/bg_11.png";
+import arra from "@/image/arra.png";
+import hi from "@/image/wavey.gif";
+import boogie from "@/image/dancey.gif";
+import examples from "@/image/examples.jpg";
+import { motion } from "motion/react"
+import { easeIn, easeInOut } from "motion";
 
 export default function Home() {
+
   return (
     <div className="home" style={{backgroundImage: "url(" + background.src + ")"}}>
       
-      <section>
-        <h1>Bridging web development and <span>brand design</span>.</h1>
+      <section className="hero">
+        <h4>Hey! My name is Camila. <img className="hi" src={hi.src}/></h4>
+        <br/>
+        <h1>
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: 0, ease: easeInOut }}>I </motion.span> 
+          
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .2, ease: easeInOut }}>connect</motion.span>
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .3, ease: easeInOut }}>web</motion.span> 
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .3, ease: easeInOut }}>development</motion.span> 
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .4, ease: easeInOut }}>with</motion.span> 
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .6, ease: easeInOut }}>brand</motion.span> 
+          <motion.span initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: .6, ease: easeInOut }}>design.</motion.span> 
+        </h1>
+        <br/>
+        <h4>Learn more about what I do:</h4>
+        <br/>
+        <img className="arra" src={arra.src}/>
+        <br/><br/>
       </section>
 
-      <div className="hero">
-        <div className="desktop">
-          <Image src={dtnav} className="dtnav" alt=""/>
-          <ParallaxProvider>
-          <ParallaxBanner
-            layers={[
-              { 
-                image: dtsky.src,
-                translateY: [0, 50],
-                opacity: [1, 0.3],
-                scale: [1.05, 1, "easeOutCubic"],
-                shouldAlwaysCompleteAnimation: true
-              },
-              { 
-                translateY: [0, 30],
-                scale: [1, 1.05, "easeOutCubic"],
-                shouldAlwaysCompleteAnimation: true,
-                expanded: false,
-                children: (
-                  <div className="hello">
-                    <span>hello world!</span>
-                  </div>
-                )
-              },
-              {
-                image: dtmtn.src,
-                translateY: [0, 15],
-                scale: [1, 1.1, "easeOutCubic"],
-                shouldAlwaysCompleteAnimation: true
-              },
-              {
-                opacity: [0, 1, "easeOutCubic"],
-                shouldAlwaysCompleteAnimation: true,
-                expanded: false,
-                children: <div className="dtgradient" />
-              },
-            ]}
-            className="aspect-[2/1] dthero"
-          />
-          </ParallaxProvider>
-          <br></br>
-        </div>
-      </div>
+      <img className="examples" src={examples.src}/>
 
-      <section>
-        <br/><br/>
-        <h2>I work with web builders or javascript frameworks for <span>websites</span> and Adobe CS, Lottie, and Blender for <span>graphic creation</span>.</h2>
-        <br/><br/>
+      <section className="choose">
+      <br/><br/><br/>
+        <motion.h2 initial={{y: 100, opacity: 0}} animate={{ y: 0, opacity: 100 }} transition={{ duration: 0.6, delay: 2, ease: easeInOut }}>
+          I work with web builders and Javascript frameworks for <span>websites</span> and Adobe CS, Lottie, and Blender for <span>graphic creation</span> to create a web site or application that tells your story.</motion.h2>
+        <br/>
+        <h4>Choose your own adventure:</h4>
+
       </section>
 
       <section>
         <div className="boxes">
           <div className="box">
+            <img className="badge" src={boogie.src}/>
             <div>
               <h3>web builders for businesses and e-commerce stores</h3>
               <p>Ideal if you're looking for a quick, professional website without the need for custom coding. With drag-and-drop tools and pre-designed templates, we can launch your site quickly and efficiently. Web builders work well for businesses ranging from independents and small businesses, to large e-commerce stores that need an attractive, functional site without extensive customization. These platform subscriptions include hosting, domain management, and basic SEO tools.</p>
@@ -138,6 +119,8 @@ export default function Home() {
         </div>
         </div>
       </section>
+
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/app/globals.css';
+import cam from '@/image/cam.png'
 
 function Nav() {
 
@@ -7,7 +8,7 @@ function Nav() {
     <>
       <div className="nav">
         <div className="top">
-          <Link href={"/"}><b>web dev + design</b> by camila</Link>
+          <Link href={"/"}><img src={cam.src} /></Link>
             {/*<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 359.54 250.73" >
             <path className="st0" d="M93.81,15.11c-17.43,0.22-30.45-2.24-41.7,9.27c-10.42,10.65-1.49,58.2-6.94,70.99
             C35.67,117.66,6.4,125.36,6.4,125.36s36.32,11.05,39.1,31.58c3.61,26.64-3.16,43.25,4.6,64.08c5.76,15.46,29.52,11.54,43.71,11.54"
