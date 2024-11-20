@@ -24,6 +24,7 @@ import storyOverlay from "@/image/preview-storyteller-hover.gif";
 
 
 export const development = [
+
   {
     name: "Storyteller AI",
     title: "Personal Project",
@@ -112,10 +113,10 @@ export const development = [
         overlay: codestackOverlay,
         category: ["all", "react", "3d"],
         website: 'none',
-        github: 'none',
-        youtube: '',
+        github: 'https://github.com/camilapaleno/code-stack',
+        youtube: 'none',
         gallery: 'none',
-        embed: 'none',
+        embed: 'https://camilapaleno.github.io/code-stack/',
       },
       // {
       //   name: "Linked 3D Website Design Concept Mockup",
@@ -142,7 +143,7 @@ export const development = [
     overlay: neiHomepageOverlay,
     category: ["all", "vanilla javascript"],
     website: 'none',
-    github: 'none',
+    github: 'https://github.com/camilapaleno/nei-portfolio',
     youtube: 'none',
     gallery: 'none',
     embed: 'https://camilapaleno.github.io/nei-portfolio/home/',
@@ -156,10 +157,10 @@ export const development = [
         overlay: neiHomepageOverlay,
         category: ["all", "vanilla javascript"],
         website: 'none',
-        github: 'none',
-        youtube: '',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
         gallery: 'none',
-        embed: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/mpp/program.html',
       },
       {
         name: "Neuroscience Education Institute This Month in Psychopharmacology Blog",
@@ -171,10 +172,10 @@ export const development = [
         overlay: neiHomepageOverlay,
         category: ["all", "vanilla javascript"],
         website: 'none',
-        github: 'none',
-        youtube: '',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
         gallery: 'none',
-        embed: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/tmip/',
       },
       {
         name: "Neuroscience Education Institute Encore Video Archive",
@@ -186,10 +187,10 @@ export const development = [
         overlay: neiHomepageOverlay,
         category: ["all", "vanilla javascript"],
         website: 'none',
-        github: 'none',
-        youtube: '',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
         gallery: 'none',
-        embed: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/encore/',
       },
 
     ];

@@ -69,7 +69,7 @@ export default function Home() {
                 <Image src={squarespace} width={200} alt=""/>
               </div>
               <div>
-                <Link href='/portfolio/builders'>see portfolio</Link>
+                <Link href='/portfolio/builders' scroll={false}>see portfolio</Link>
               </div>              
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function Home() {
                 <Image src={react} width={50} alt=""/>
             </div>
             <div>
-              <Link href='/portfolio/development'>see portfolio</Link>
+              <Link href='/portfolio/development' scroll={false}>see portfolio</Link>
             </div>            
           </div>
         </div>

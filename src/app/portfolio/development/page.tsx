@@ -4,6 +4,8 @@ import {development} from '@/data/development';
 import Header from "@/components/Header";
 import Project from "@/components/Project";
 import { useState, useEffect } from 'react';
+import algoPreview from "@/image/preview-algo.jpg";
+import comingOverlay from "@/image/coming-soon-overlay.png"
 
 function Development() {
   const [filter, setFilter] = useState("all");
@@ -75,6 +77,22 @@ function Development() {
 
         <div className="portfolio__container">
           <ul>
+            <li className='card'>
+                  <button
+                  
+                    className='card_path' 
+                    >
+                    <h1>Algorhythym</h1>
+                    <p>AI audio analysis to boost artists' digital marketing strategy.</p>
+                    <div className="card_preview">
+                      <img src={algoPreview.src} alt="Algorhythym" />
+                      <img src={comingOverlay.src} alt="Algorhythym" />
+                    </div>
+                    
+                    <span>Next.js, Typescript</span>
+                  </button>
+
+              </li> 
             {projects.map(item =>
               item.filtered === true ? 
               <li key={item.name} className='card'>
