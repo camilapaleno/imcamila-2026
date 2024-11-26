@@ -13,7 +13,8 @@ import codestackPreview from "@/image/preview-codestack.png";
 import codestackOverlay from "@/image/preview-codestack-hover.gif";
 
 import gradientPreview from "@/image/preview-gradientdesk.png";
-
+import algoPreview from "@/image/preview-algo.jpg"
+import algoOverlay from "@/image/coming-soon-overlay.png"
 import taskPreview from "@/image/preview-taskhelper.jpg";
 import taskOverlay from "@/image/preview-taskhelper-hover.gif";
 import storyPreview from "@/image/preview-storyteller.jpg";
@@ -40,19 +41,19 @@ export const development = [
     embed: 'https://devondonisdp.github.io/devondonisdp/index.html',
   },
   {
-    name: "Mariana (MarsBars) - Artist in Los Angeles",
-    title: "Mariana",
-    short: "Zine portfolio",
-    long: "A portfolio made for artist Mariana with Next.js.",
+    name: "Algorhythm - AI audio analysis to boost artists' digital marketing strategy",
+    title: "Algorhythm",
+    short: "AI audio analysis to boost artists' digital marketing strategy.",
+    long: "AI audio analysis tool that boosts artists' digital marketing strategy made with Next.js and Typescript. Currently working with a backend team to integrate AI. View the landing page preview below.",
     tools: "Next.js, Typscript",
-    preview: marsyPreview,
-    overlay: overlay,
+    preview: algoPreview,
+    overlay: algoOverlay,
     category: ["all", "react"],
-    website: 'https://camilapaleno.github.io/marsy.psd/',
+    website: 'https://algorhythm.app/',
     github: 'none',
     youtube: 'none',
     gallery: 'none',
-    embed: 'https://camilapaleno.github.io/marsy.psd/',
+    embed: 'https://algorhythm.app/',
   },
   // {
   //   name: "Beechjet - Band in Los Angeles",
@@ -84,7 +85,21 @@ export const development = [
     gallery: 'none',
     embed: 'none',
   },
-
+  {
+    name: "Mariana (MarsBars) - Artist in Los Angeles",
+    title: "Mariana",
+    short: "Zine portfolio",
+    long: "A portfolio made for artist Mariana with Next.js.",
+    tools: "Next.js, Typscript",
+    preview: marsyPreview,
+    overlay: overlay,
+    category: ["all", "react"],
+    website: 'https://camilapaleno.github.io/marsy.psd/',
+    github: 'none',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://camilapaleno.github.io/marsy.psd/',
+  },
   {
     name: "Task Helper AI",
     title: "Personal Project",
@@ -101,7 +116,21 @@ export const development = [
     gallery: 'none',
     embed: 'none',
   },
-
+  {
+    name: "Neuroscience Education Institute Homepage - Website UX UI Design with HTML CSS",
+    title: "Neuroscience Education Institute",
+    short: "Company’s homepage",
+    long: "Company’s homepage",
+    tools: "HTML, CSS, Javascript",
+    preview: neiHomepagePreview,
+    overlay: neiHomepageOverlay,
+    category: ["all", "vanilla javascript"],
+    website: 'none',
+    github: 'https://github.com/camilapaleno/nei-portfolio',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://camilapaleno.github.io/nei-portfolio/home/',
+  },
     {
       name: "2023 Web Design and Development Portfolio",
       title: "Personal Project",
@@ -162,21 +191,7 @@ export const development = [
       //   gallery: 'none',
       //   embed: 'none',
       // },
-  {
-    name: "Neuroscience Education Institute Homepage - Website UX UI Design with HTML CSS",
-    title: "Neuroscience Education Institute",
-    short: "Company’s homepage",
-    long: "Company’s homepage",
-    tools: "HTML, CSS, Javascript",
-    preview: neiHomepagePreview,
-    overlay: neiHomepageOverlay,
-    category: ["all", "vanilla javascript"],
-    website: 'none',
-    github: 'https://github.com/camilapaleno/nei-portfolio',
-    youtube: 'none',
-    gallery: 'none',
-    embed: 'https://camilapaleno.github.io/nei-portfolio/home/',
-  },
+
       {
         name: "Neuroscience Education Institute Master Psychopharmacology Program",
         title: "Neuroscience Education Institute",
