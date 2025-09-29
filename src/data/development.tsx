@@ -1,0 +1,243 @@
+import overlay from "@/image/preview-overlay.png";
+
+import neiHomepagePreview from "@/image/preview-nei_homepage2.png";
+import neiMPPPreview from "@/image/preview-neimpp.png";
+import neiTMIPPreview from "@/image/preview-neitmip.jpg";
+import neiEncorePreview from "@/image/preview-neiencore.png";
+import neiHomepageOverlay from "@/image/preview-nei_homepage-overlay.png";
+import devonPreview from "@/image/preview-devon2.png";
+import devonOverlay from "@/image/preview-devon-hover.gif";
+import blenderOverlay from "@/image/preview-blender-overlay.png";
+
+import codestackPreview from "@/image/preview-codestack.png";
+import codestackOverlay from "@/image/preview-codestack-hover.gif";
+
+import gradientPreview from "@/image/preview-gradientdesk.png";
+import algoPreview from "@/image/preview-algo.jpg"
+import algoOverlay from "@/image/coming-soon-overlay.png"
+import taskPreview from "@/image/preview-taskhelper.jpg";
+import taskOverlay from "@/image/preview-taskhelper-hover.gif";
+import storyPreview from "@/image/preview-storyteller.jpg";
+import storyOverlay from "@/image/preview-storyteller-hover.gif";
+import marsyPreview from "@/image/preview-marsy.jpg";
+// import beechjetPreview from "@/image/preview-beechjet2.png";
+
+export const development = [
+
+
+  {
+    name: "Devon Donis - Portfolio for a videographer & filmmaker in Los Angeles",
+    title: "Devon Donis",
+    short: "Portfolio for a videographer & filmmaker",
+    long: "A portfolio made for videographer Devon Donis with HTML & CSS.",
+    tools: "HTML, CSS",
+    preview: devonPreview,
+    overlay: devonOverlay,
+    category: ["all", "vanilla javascript"],
+    website: 'none',
+    github: 'none',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://devondonisdp.github.io/devondonisdp/index.html',
+  },
+  {
+    name: "Algorhythm - AI audio analysis to boost artists' digital marketing strategy",
+    title: "Algorhythm",
+    short: "AI audio analysis to boost artists' digital marketing strategy.",
+    long: "AI audio analysis tool that boosts artists' digital marketing strategy made with Next.js and Typescript. Currently working with a backend team to integrate AI. View the landing page preview below.",
+    tools: "Next.js, Typscript",
+    preview: algoPreview,
+    overlay: algoOverlay,
+    category: ["all", "react"],
+    website: 'https://algorhythm.app/',
+    github: 'none',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://algorhythm.app/',
+  },
+  // {
+  //   name: "Beechjet - Band in Los Angeles",
+  //   title: "Beechjet",
+  //   short: "Website for Los Angeles indie rock band",
+  //   long: "A portfolio made for a band with HTML & CSS.",
+  //   tools: "HTML, CSS",
+  //   preview: beechjetPreview,
+  //   overlay: overlay,
+  //   category: ["all", "vanilla javascript"],
+  //   website: 'none',
+  //   github: 'none',
+  //   youtube: 'none',
+  //   gallery: 'none',
+  //   embed: 'https://devondonisdp.github.io/devondonisdp/index.html',
+  // },
+  {
+    name: "Storyteller AI",
+    title: "Personal Project",
+    short: "AI tool that created children's books based on prompt.",
+    long: "AI tool that created children's books based on prompt.",
+    tools: "Next.js, Tailwind, Typscript, OpenAI",
+    preview: storyPreview,
+    overlay: storyOverlay,
+    category: ["all", "react"],
+    website: 'none',
+    github: 'https://github.com/camilapaleno/storyteller-ai',
+    youtube: 'https://www.youtube.com/embed/5TKjjB1L72Q?si=89wHd30GO5S-BIAQ&amp;controls=0',
+    gallery: 'none',
+    embed: 'none',
+  },
+  {
+    name: "Mariana (MarsBars) - Artist in Los Angeles",
+    title: "Mariana",
+    short: "Zine portfolio",
+    long: "A portfolio made for artist Mariana with Next.js.",
+    tools: "Next.js, Typscript",
+    preview: marsyPreview,
+    overlay: overlay,
+    category: ["all", "react"],
+    website: 'https://camilapaleno.github.io/marsy.psd/',
+    github: 'none',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://camilapaleno.github.io/marsy.psd/',
+  },
+  {
+    name: "Task Helper AI",
+    title: "Personal Project",
+    short: "AI tool to keep track of daily tasks.",
+    long: "AI tool to keep track of daily tasks.",
+    tools: "Next.js, Tailwind, Typscript",
+    preview: taskPreview,
+    overlay: taskOverlay,
+    source: "/task-helper",
+    category: ["all", "react"],
+    website: 'none',
+    github: 'https://github.com/camilapaleno/task-helper-ai',
+    youtube: 'https://www.youtube.com/embed/pBBF7x7sRLo?si=_zpFWkdso_zY5m8k&amp;controls=0',
+    gallery: 'none',
+    embed: 'none',
+  },
+  {
+    name: "Neuroscience Education Institute Homepage - Website UX UI Design with HTML CSS",
+    title: "Neuroscience Education Institute",
+    short: "Company’s homepage",
+    long: "Company’s homepage",
+    tools: "HTML, CSS, Javascript",
+    preview: neiHomepagePreview,
+    overlay: neiHomepageOverlay,
+    category: ["all", "vanilla javascript"],
+    website: 'none',
+    github: 'https://github.com/camilapaleno/nei-portfolio',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://camilapaleno.github.io/nei-portfolio/home/',
+  },
+    {
+      name: "2023 Web Design and Development Portfolio",
+      title: "Personal Project",
+      short: "My 2023 portfolio featuring my first Blender project",
+      long: "My 2023 portfolio featuring my first Blender project",
+      tools: "HTML, CSS, Javascript, Blender 3D",
+      preview: gradientPreview,
+      overlay: blenderOverlay,
+      category: ["all", "vanilla javascript", "3d"],
+      website: 'none',
+      github: 'https://github.com/camilapaleno/imcamila-dev-v2',
+      youtube: 'none',
+      gallery: 'none',
+      embed: 'https://camilapaleno.github.io/imcamila-dev-v2/',
+    },
+      // {
+      //   name: "Dive Deeper 3D Website Design Concept Mockup",
+      //   title: "Personal Project",
+      //   short: "3D website hero concept/mockup",
+      //   long: "3D website hero concept/mockup",
+      //   tools: "React.js, Spline 3D",
+      //   preview: deeperPreview,
+      //   overlay: deeperOverlay,
+      //   category: ["all", "react", "3d"],
+      //   website: 'none',
+      //   github: 'none',
+      //   youtube: '',
+      //   gallery: 'none',
+      //   embed: 'none',
+      // },
+      {
+        name: "Code Stack 3D Website Design Concept Mockup",
+        title: "Personal Project",
+        short: "3D website hero concept/mockup",
+        long: "3D website hero concept/mockup",
+        tools: "React.js, Spline 3D",
+        preview: codestackPreview,
+        overlay: codestackOverlay,
+        category: ["all", "react", "3d"],
+        website: 'none',
+        github: 'https://github.com/camilapaleno/code-stack',
+        youtube: 'none',
+        gallery: 'none',
+        embed: 'https://camilapaleno.github.io/code-stack/',
+      },
+      // {
+      //   name: "Linked 3D Website Design Concept Mockup",
+      //   title: "Personal Project",
+      //   short: "3D website hero concept/mockup",
+      //   long: "3D website hero concept/mockup",
+      //   tools: "React.js, Spline 3D",
+      //   preview: linkedPreview,
+      //   overlay: linkedOverlay,
+      //   category: ["all", "react", "3d"],
+      //   website: 'none',
+      //   github: 'none',
+      //   youtube: '',
+      //   gallery: 'none',
+      //   embed: 'none',
+      // },
+
+      {
+        name: "Neuroscience Education Institute Master Psychopharmacology Program",
+        title: "Neuroscience Education Institute",
+        long: "Company’s Master Psychopharmacology Program",
+        tools: "HTML, CSS, Javascript",
+        preview: neiMPPPreview,
+        overlay: neiHomepageOverlay,
+        category: ["all", "vanilla javascript"],
+        website: 'none',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
+        gallery: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/mpp/program.html',
+      },
+      {
+        name: "Neuroscience Education Institute This Month in Psychopharmacology Blog",
+        title: "Neuroscience Education Institute",
+        short: "Company’s blog, This Month in Psychopharmacology",
+        long: "Company’s blog, This Month in Psychopharmacology",
+        tools: "HTML, CSS, Javascript",
+        preview: neiTMIPPreview,
+        overlay: neiHomepageOverlay,
+        category: ["all", "vanilla javascript"],
+        website: 'none',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
+        gallery: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/tmip/',
+      },
+      {
+        name: "Neuroscience Education Institute Encore Video Archive",
+        title: "Neuroscience Education Institute",
+        short: "Company’s conference video archive, Encores",
+        long: "Company’s conference video archive, Encores",
+        tools: "HTML, CSS, Javascript",
+        preview: neiEncorePreview,
+        overlay: neiHomepageOverlay,
+        category: ["all", "vanilla javascript"],
+        website: 'none',
+        github: 'https://github.com/camilapaleno/nei-portfolio',
+        youtube: 'none',
+        gallery: 'none',
+        embed: 'https://camilapaleno.github.io/nei-portfolio/encore/',
+      },
+
+    ];
+
+
+    export default development;
