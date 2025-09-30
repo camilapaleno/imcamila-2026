@@ -55,42 +55,12 @@ export default function Home() {
       </section>
 
       <section id="choose">
+        
         <div className="boxes">
-          <div className="box">
-            <img className="badge" src={boogie.src}/>
-            <div>
-              <h3>web builders for businesses and e-commerce stores</h3>
-              <p>Ideal if you&apos;re looking for a quick, professional website without the need for custom coding. With drag-and-drop tools and pre-designed templates, we can launch your site quickly and efficiently. Web builders work well for businesses ranging from independents and small businesses, to large e-commerce stores that need an attractive, functional site without extensive customization. These platform subscriptions include hosting, domain management, and basic SEO tools.</p>
-            </div>
-            <div>
-              <div className="tools">
-                <Image src={shopify} width={120} alt=""/>
-                <Image src={squarespace} width={200} alt=""/>
-              </div>
-              <div>
-                <Link href='/portfolio/builders' scroll={true}>see portfolio</Link>
-              </div>              
-            </div>
-          </div>
         <div className="box">
           <div>
-            <h3>frontend development for web applications</h3>
-            <p> If you require a more complex, scalable website or web application, I provide full custom development using javascript frameworks. This gives you complete control over design, functionality, and performance. It’s the right solution for businesses looking for a unique, highly optimized, and future-ready site.</p>            
-          </div>
-          <div>
-            <div className="tools">
-                <Image src={nextjs} width={120} alt=""/>
-                <Image src={react} width={50} alt=""/>
-            </div>
-            <div>
-              <Link href='/portfolio/development' scroll={true}>see portfolio</Link>
-            </div>            
-          </div>
-        </div>
-        <div className="box">
-          <div>
-            <h3>2D and 3D graphic creation</h3>
-            <p>Your website and branding isn’t complete without visual components. I create a variety of visual content, ranging from 3D models to photography.</p>            
+            <h3>brand design</h3>
+            <p>I specialize in creating cohesive brand visuals that help businesses stand out. From custom logo design and photography to social media graphics and website visuals, I bring together every element of your brand’s identity. My focus is on consistency, creativity, and clarity — so your brand not only looks professional but also communicates your story effectively.</p>            
           </div>
           <div>
             <div className="tools">
@@ -116,6 +86,38 @@ export default function Home() {
             </div>            
           </div>
         </div>
+          <div className="box">
+            <img className="badge" src={boogie.src}/>
+            <div>
+              <h3>ux/ui design</h3>
+              <p>Ideal if you&apos;re looking for a quick, professional website without the need for custom coding. With drag-and-drop tools and pre-designed templates, we can launch your site quickly and efficiently. Web builders work well for businesses ranging from independents and small businesses, to large e-commerce stores that need an attractive, functional site without extensive customization. These platform subscriptions include hosting, domain management, and basic SEO tools.</p>
+            </div>
+            <div>
+              <div className="tools">
+                <Image src={shopify} width={120} alt=""/>
+                <Image src={squarespace} width={200} alt=""/>
+              </div>
+              <div>
+                <Link href='/portfolio/builders' scroll={true}>see portfolio</Link>
+              </div>              
+            </div>
+          </div>
+        <div className="box">
+          <div>
+            <h3>web development</h3>
+            <p>For small businesses and e-commerce stores, I build professional websites quickly and efficiently using web builder platforms that include hosting, domain management, and SEO tools. For businesses requiring something more advanced or custom, I provide custom frontend development with modern JavaScript frameworks, giving you complete control over design, functionality, and performance. Whether you need a polished site launched fast or a scalable web application built for growth, I help create a solution that fits your goals.</p>            
+          </div>
+          <div>
+            <div className="tools">
+                <Image src={nextjs} width={120} alt=""/>
+                <Image src={react} width={50} alt=""/>
+            </div>
+            <div>
+              <Link href='/portfolio/development' scroll={true}>see portfolio</Link>
+            </div>            
+          </div>
+        </div>
+
         </div>
       </section>
 
