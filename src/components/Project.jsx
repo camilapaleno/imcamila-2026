@@ -1,9 +1,51 @@
 import '@/app/globals.css';
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Project = ({ data, closeModal }) => {
 
   const [isActive, setActive] = useState(true);
+  const [scale, setScale] = useState(1);
+  const wrapperRef = useRef(null);
+
+  // Fixed dimensions for iframe content
+  const DESKTOP_WIDTH = 1430;
+  const DESKTOP_HEIGHT = 780;
+  const MOBILE_WIDTH = 430;
+  const MOBILE_HEIGHT = 920;
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  useEffect(() => {
+    const calculateScale = () => {
+      if (!wrapperRef.current) return;
+
+      const wrapper = wrapperRef.current;
+      const wrapperWidth = wrapper.clientWidth;
+      const wrapperHeight = wrapper.clientHeight;
+
+      // Get the target dimensions based on active state
+      const targetWidth = isActive ? DESKTOP_WIDTH : MOBILE_WIDTH;
+      const targetHeight = isActive ? DESKTOP_HEIGHT : MOBILE_HEIGHT;
+
+      // Calculate scale to fit within wrapper while maintaining aspect ratio
+      const scaleX = wrapperWidth / targetWidth;
+      const scaleY = wrapperHeight / targetHeight;
+      const newScale = Math.min(scaleX, scaleY, 1); // Don't scale up beyond 100%
+
+      setScale(newScale);
+    };
+
+    calculateScale();
+    window.addEventListener('resize', calculateScale);
+
+    return () => window.removeEventListener('resize', calculateScale);
+  }, [isActive]);
 
 
   return (
@@ -58,12 +100,25 @@ const Project = ({ data, closeModal }) => {
                 </button>
               </div>
 
-              <div className="iframe-display-wrapper">
-                <iframe
-                  title="iframe"
-                  src={data.embed}
-                  className={isActive ? "desktop" : "mobile"}>
-                </iframe>
+              <div className="iframe-display-wrapper" ref={wrapperRef}>
+                <div
+                  className="iframe-scale-container"
+                  style={{
+                    width: isActive ? `${DESKTOP_WIDTH}px` : `${MOBILE_WIDTH}px`,
+                    height: isActive ? `${DESKTOP_HEIGHT}px` : `${MOBILE_HEIGHT}px`,
+                    transform: `scale(${scale})`,
+                  }}
+                >
+                  <iframe
+                    title="iframe"
+                    src={data.embed}
+                    className={isActive ? "desktop" : "mobile"}
+                    style={{
+                      width: isActive ? `${DESKTOP_WIDTH}px` : `${MOBILE_WIDTH}px`,
+                      height: isActive ? `${DESKTOP_HEIGHT}px` : `${MOBILE_HEIGHT}px`,
+                    }}>
+                  </iframe>
+                </div>
               </div>
             </div>
           }
