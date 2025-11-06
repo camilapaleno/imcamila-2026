@@ -61,7 +61,7 @@ function Development() {
         <section className="title">
           <br/><br/>
           <h2>
-            I work with web builders and Javascript frameworks for <span>websites</span> and Adobe CS, Lottie, and Blender for <span>graphic creation</span> to create a web site or application that tells your story.
+          Creative online experiences that align with your brand image and message
           </h2>
         </section>
 
@@ -97,14 +97,21 @@ function Development() {
                     className='card_path'
                     onClick={() => toggleItem(item)}
                     >
-                    <h1>{item.title}</h1>
-                    <p>{item.short}</p>
+                    <h1>https:// {item.title}</h1>
+                    <p>meta: {item.short}</p>
                     <div className="card_preview">
                       <img src={item.preview.src} alt={item.name} />
                       <img src={item.overlay.src} alt={item.name} />
                     </div>
 
-                    <span>{item.tools}</span>
+                    <div className="tools-container">
+                      {item.projectType === "client" && (
+                        <span className="tool-tag client-tag">✦ Client ✦</span>
+                      )}
+                      {item.tools.split(',').map((tool: string, index: number) => (
+                        <span key={index} className="tool-tag">{tool.trim()}</span>
+                      ))}
+                    </div>
                   </button>
 
               </li> : ""

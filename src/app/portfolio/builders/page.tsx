@@ -60,7 +60,14 @@ function Builders() {
                       <img src={item.overlay.src} alt={item.name} />
                     </div>
                     
-                    <span>{item.tools}</span>
+                    <div className="tools-container">
+                      {item.projectType === "client" && (
+                        <span className="tool-tag client-tag">★ client</span>
+                      )}
+                      {item.tools.split(',').map((tool: string, index: number) => (
+                        <span key={index} className="tool-tag">{tool.trim()}</span>
+                      ))}
+                    </div>
                   </button>
 
               </li> : ""

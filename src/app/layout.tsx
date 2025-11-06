@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import '@/app/globals.css';
+import { DM_Sans } from 'next/font/google';
+import ClientLayout from '@/components/ClientLayout';
 
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-dm-sans',
+});
 
 export const metadata: Metadata = {
   title: "Camila Paleno Web Development & Design",
@@ -16,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {Nav()}  
-        {children}
-        {Footer()}  
+      <body className={dmSans.variable}>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
