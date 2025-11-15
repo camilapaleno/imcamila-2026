@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-web": "^0.36.1",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
     "lottie-react": "^2.4.0",
     "motion": "^11.11.17",
     "next": "^14.2.33",
     "react": "^18",
     "react-dom": "^18",
-    "react-scroll-parallax": "^3.4.5"
+    "react-scroll-parallax": "^3.4.5",
+    "three": "^0.181.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,7 +1,14 @@
 import '@/app/globals.css';
 import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Project = ({ data, closeModal }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const [isActive, setActive] = useState(true);
   const [scale, setScale] = useState(1);
@@ -21,37 +28,64 @@ const Project = ({ data, closeModal }) => {
     };
   }, []);
 
+  // Extract calculateScale function so it can be called from animation callback
+  const calculateScale = () => {
+    if (!wrapperRef.current) return;
+
+    const wrapper = wrapperRef.current;
+    const wrapperWidth = wrapper.clientWidth;
+    const wrapperHeight = wrapper.clientHeight;
+
+    // Prevent invalid calculations when wrapper hasn't been sized yet
+    if (wrapperWidth === 0 || wrapperHeight === 0) return;
+
+    // Get the target dimensions based on active state
+    const targetWidth = isActive ? DESKTOP_WIDTH : MOBILE_WIDTH;
+    const targetHeight = isActive ? DESKTOP_HEIGHT : MOBILE_HEIGHT;
+
+    // Calculate scale to fit within wrapper while maintaining aspect ratio
+    const scaleX = wrapperWidth / targetWidth;
+    const scaleY = wrapperHeight / targetHeight;
+    const newScale = Math.min(scaleX, scaleY, 1); // Don't scale up beyond 100%
+
+    setScale(newScale);
+  };
+
   useEffect(() => {
-    const calculateScale = () => {
-      if (!wrapperRef.current) return;
-
-      const wrapper = wrapperRef.current;
-      const wrapperWidth = wrapper.clientWidth;
-      const wrapperHeight = wrapper.clientHeight;
-
-      // Get the target dimensions based on active state
-      const targetWidth = isActive ? DESKTOP_WIDTH : MOBILE_WIDTH;
-      const targetHeight = isActive ? DESKTOP_HEIGHT : MOBILE_HEIGHT;
-
-      // Calculate scale to fit within wrapper while maintaining aspect ratio
-      const scaleX = wrapperWidth / targetWidth;
-      const scaleY = wrapperHeight / targetHeight;
-      const newScale = Math.min(scaleX, scaleY, 1); // Don't scale up beyond 100%
-
-      setScale(newScale);
-    };
-
     calculateScale();
+
+    // Use ResizeObserver to detect when wrapper gets its actual size
+    const resizeObserver = new ResizeObserver(calculateScale);
+    if (wrapperRef.current) {
+      resizeObserver.observe(wrapperRef.current);
+    }
+
     window.addEventListener('resize', calculateScale);
 
-    return () => window.removeEventListener('resize', calculateScale);
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', calculateScale);
+    };
   }, [isActive]);
 
 
-  return (
-    <>
-    <div className="modal">
-      <div className='frame'>
+  const modalContent = (
+    <motion.div
+      className="modal"
+      style={{ zIndex: 99999 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <motion.div
+        className='frame'
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        onAnimationComplete={() => calculateScale()}
+      >
         <div className="project-layout">
 
           {/* Left Info Panel */}
@@ -141,10 +175,13 @@ const Project = ({ data, closeModal }) => {
             </div>
           }
         </div>
-      </div>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
+
+  if (!mounted) return null;
+
+  return createPortal(modalContent, document.body);
 }
 
 export default Project;

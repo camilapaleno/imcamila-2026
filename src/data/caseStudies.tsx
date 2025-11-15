@@ -8,12 +8,16 @@ import comfyImage2 from "@/image/comfy-casestudy2.png";
 import comfyImage4 from "@/image/comfy-casestudy4.png";
 import comfyImage5 from "@/image/comfy-casestudy5.png";
 import sagePreview from "@/image/preview-sagesocial5.png";
+import sageImage1 from "@/image/casestudy-sage-1.gif";
+import sageImage2 from "@/image/casestudy-sage-2.gif";
+import sageImage3 from "@/image/casestudy-sage-3.gif";
 import devonPreview from "@/image/preview-devon4.png";
 import algoPreview from "@/image/preview-algo.jpg";
-import algoImage1 from "@/image/algo-casestudy1.png";
-import algoImage2 from "@/image/algo-casestudy2.png";
-import algoImage3 from "@/image/algo-casestudy3.png";
-import algoImage4 from "@/image/algo-casestudy4.png";
+import algoImage1 from "@/image/casestudy-algo-11.png";
+import algoImage2 from "@/image/casestudy-algo-12.png";
+import algoImage3 from "@/image/algo-casestudy-10.gif";
+import algoImage4 from "@/image/algo-casestudy-8.png";
+import algoImage5 from "@/image/algo-casestudy-9.png";
 import jacoPreview from "@/image/preview-jacobeachluxe.png";
 import jblImage1 from "@/image/jbl-casestudy-1.png";
 import jblImage2 from "@/image/jbl-casestudy-2.png";
@@ -23,6 +27,7 @@ import jblImage5 from "@/image/jbl-casestudy-5.png";
 import jblImage6 from "@/image/jbl-casestudy-6.png";
 import jblImage7 from "@/image/jbl-casestudy-7.png";
 import jblImage8 from "@/image/jbl-casestudy-8.png";
+import particlePreview from "@/image/particle-casestudy-1.png";
 
 export interface CaseStudyContentBlock {
   type: 'text' | 'image';
@@ -46,6 +51,32 @@ export interface CaseStudy {
 
 // Example case studies data
 export const caseStudies: CaseStudy[] = [
+  // {
+  //   id: "particle-donut",
+  //   title: "Particle Donut",
+  //   shortDescription: "An interactive 3D particle system creating a mesmerizing donut visualization using Three.js and custom shaders.",
+  //   coverImage: particlePreview,
+  //   featured: true,
+  //   category: ["3d", "creative coding", "webgl"],
+  //   year: "2025",
+  //   tools: "Three.js, WebGL, GLSL Shaders, React",
+  //   contentBlocks: [
+  //     {
+  //       type: 'text',
+  //       content: 'The Particle Donut is an experimental creative coding project exploring particle systems and 3D graphics on the web. Using Three.js and custom GLSL shaders, I created an interactive visualization where thousands of particles arrange themselves into a rotating donut shape, responding to user interaction and creating a mesmerizing visual experience.'
+  //     },
+  //     {
+  //       type: 'image',
+  //       content: particlePreview.src,
+  //       alt: 'Particle Donut Visualization',
+  //       caption: 'Dynamic particle system forming a donut shape with real-time rendering'
+  //     },
+  //     {
+  //       type: 'text',
+  //       content: 'The project demonstrates advanced WebGL techniques including custom particle systems, shader programming for visual effects, and performance optimization to maintain smooth 60fps rendering with thousands of particles. The donut responds to mouse movement, creating an engaging interactive experience that showcases the intersection of mathematics, art, and code.'
+  //     },
+  //   ]
+  // },
   {
     id: "comfyui",
     title: "ComfyUI",
@@ -54,22 +85,16 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
     category: ["ux/ui design", "ai", "interface design"],
     client: "ComfyUI",
-    year: "2024",
+    year: "2025",
     tools: "Figma, User Research, Prototyping",
     contentBlocks: [
       {
         type: 'text',
-        content: 'ComfyUI is a powerful node-based interface for AI image generation using Stable Diffusion. The challenge was to design an intuitive user experience that would make complex AI workflows accessible to both beginners and advanced users, while maintaining the flexibility that power users require.'
-      },
-      {
-        type: 'image',
-        content: comfyPreview.src,
-        alt: 'ComfyUI Interface Overview',
-        caption: 'The main interface balances complexity with usability through careful information architecture'
+        content: 'ComfyUI is a powerful node-based interface for AI image generation. The challenge was to design an intuitive user experience that would make complex AI workflows accessible to both beginners and advanced users, while maintaining the flexibility that power users require.'
       },
       {
         type: 'text',
-        content: 'Through extensive user research and testing, I developed a design system that prioritizes discoverability and progressive disclosure. The interface guides new users through basic workflows while providing advanced features that don\'t clutter the experience for those who don\'t need them yet.'
+        content: 'I developed a design system that prioritizes discoverability and progressive disclosure. The interface guides new users through basic workflows while providing advanced features that don\'t clutter the experience for those who don\'t need them yet.'
       },
       {
         type: 'image',
@@ -101,35 +126,57 @@ export const caseStudies: CaseStudy[] = [
       },
     ]
   },
+
   {
     id: "sage-social-marketing",
-    title: "Sage Social",
-    shortDescription: "A bold, modern website for a Los Angeles marketing agency specializing in social media strategy.",
+    title: "Elevating Squarespace with Sage Social",
+    shortDescription: "Small businesses needed easily-updateable websites with custom functionality beyond standard Squarespace capabilities.",
     coverImage: sagePreview,
     featured: true,
     category: ["web design", "squarespace", "marketing"],
     client: "Sage Social",
-    year: "2024",
+    year: "2022-current",
     tools: "Squarespace, CSS, JavaScript",
     contentBlocks: [
       {
         type: 'text',
-        content: 'Sage Social is a cutting-edge social media marketing agency based in Los Angeles. They needed a website that would reflect their innovative approach to digital marketing while showcasing their portfolio of successful campaigns and attracting new clients.'
+        content: 'Sage Social is a marketing agency that specializes in helping small businesses grow their online presence. Their clients would come to them with big dreams for their websites but limited budgets and even more limited technical knowledge. They wanted something that looked custom and professional, but they also needed to be able to update their own content, add new photos, and make changes without calling a developer every time.'
+      },
+      {
+        type: 'text',
+        content: 'The problem was that standard Squarespace templates, while user-friendly, often felt generic and didnt capture the unique personality of each business. On the other hand, fully custom websites were expensive to build and even more expensive to maintain. These small business owners would get frustrated trying to make simple updates, or theyd end up with outdated sites because they couldnt afford ongoing developer support.'
+      },
+      {
+        type: 'text',
+        content: 'My role was to bridge this gap by creating custom components and functionality within the Squarespace ecosystem. This meant I could give clients the unique features and design elements they wanted while preserving the platforms intuitive content management system they could actually use.'
       },
       {
         type: 'image',
-        content: sagePreview.src,
-        alt: 'Sage Social Website',
-        caption: 'Bold typography and vibrant colors reflect the agency\'s dynamic personality'
+        content: sageImage1.src,
+        alt: 'Sage Social Custom Squarespace Components',
+        caption: 'Custom interactive components built within Squarespace'
       },
       {
         type: 'text',
-        content: 'The website features an energetic design with bold typography, vibrant accent colors, and dynamic layouts that reflect the fast-paced nature of social media. Custom JavaScript interactions were implemented to create engaging scroll effects and portfolio presentations that demonstrate the agency\'s creative capabilities.'
+        content: 'As I worked on more projects, I started noticing patterns in what clients needed. Many wanted better ways to display image galleries, more sophisticated portfolio layouts, and interactive elements that felt modern without being overwhelming. This led me to develop downloadable plugins that I either sell on Etsy or have for free on my website.'
       },
       {
+        type: 'image',
+        content: sageImage2.src,
+        alt: 'Sage Social Masonry Gallery Plugin',
+        caption: 'Custom masonry gallery with parallax effects for image portfolios'
+      },      
+      {
         type: 'text',
-        content: 'Key features include a portfolio showcase highlighting successful campaigns, service pages detailing their offerings, and a contact system for potential clients. The site was built to be easily maintainable by the Sage Social team, allowing them to regularly update their portfolio with new work.'
+        content: 'This partnership with Sage Social continues to evolve, and Im excited about the new challenges and opportunities that come with helping small businesses tell their stories online in ways that are both beautiful and practical.'
       },
+      {
+        type: 'image',
+        content: sageImage3.src,
+        alt: 'Sage Social Custom Layouts',
+        caption: 'Sage Socials website has been through various redesigns.'
+      },
+
     ]
   },
   {
@@ -145,55 +192,81 @@ export const caseStudies: CaseStudy[] = [
     contentBlocks: [
       {
         type: 'text',
-        content: 'Algorhythm is an innovative music discovery platform that analyzes user-uploaded tracks to recommend similar songs and artists. As the frontend developer, I was responsible for building the entire user interface from scratch, creating design frameworks, and collaborating closely with the backend team to integrate complex data processing workflows.'
+        content: 'Algorhythm is an innovative platform that. As the frontend developer and UX/UI Designer, I was responsible for building the entire user interface from scratch, creating design frameworks, and collaborating closely with the backend team to integrate complex data processing workflows.'
       },
       {
         type: 'text',
-        content: '## Project Overview\n\nKey Project Metrics:\n\n• Project Duration: October 2024 - January 2025 (4 months)\n\n• 35+ Pull Requests successfully merged\n\n• 30+ Jira tickets completed across frontend development\n\n• Full-stack integration with real-time data processing'
+        content: 'The project spanned four months from October 2024 to January 2025, during which I successfully merged over 35 pull requests and completed more than 30 Jira tickets across frontend development. The work involved full-stack integration with real-time data processing systems, requiring close coordination between frontend and backend development.'
+      },
+      // {
+      //   type: 'text',
+      //   content: 'My responsibilities encompassed the full spectrum of frontend development. I built the complete React.js application architecture from scratch, implementing responsive UI components for music upload, campaign management, and results visualization. A significant challenge was developing real-time loading states and error handling for asynchronous music processing, as well as creating a dynamic dashboard for displaying campaign results and analytics.'
+      // },
+      // {
+      //   type: 'text',
+      //   content: 'Beyond development, I took on the UI/UX design and prototyping work, creating comprehensive design frameworks using Adobe XD. I designed mockups for the "Sound Overview" interface showing campaign analytics and established visual design patterns and a component library that would guide the development process.'
+      // },
+      // {
+      //   type: 'text',
+      //   content: 'The backend integration was a collaborative effort where I worked closely with the backend developer to design and implement REST API endpoints. I integrated Supabase authentication and database services, implemented file upload functionality for audio processing, and designed the data flow architecture for campaign management and results display.'
+      // },
+      {
+        type: 'text',
+        content: 'The technical stack centered around React.js, Next.js, and TypeScript for the frontend, with CSS3 and responsive design principles guiding the styling approach. For backend integration, I worked with Supabase and REST APIs, while using Adobe XD for prototyping and mockups. Development tools included Git, GitHub, and Chrome DevTools for debugging and optimization.'
+      },
+      {
+        type: 'text',
+        content: 'One of the first major features I developed was the user authentication system. I implemented secure login and register functionality with Supabase, created protected routes and session management, and added comprehensive error handling for authentication edge cases. This foundation was critical for ensuring users could safely access their campaigns and data.'
+      },
+      {
+        type: 'text',
+        content: 'The campaign management interface became the heart of the application. I built an intuitive upload modal for music file submission, implemented campaign creation and management workflows, and added campaign deletion functionality with proper confirmation flows to prevent accidental data loss. Managing real-time processing states was particularly complex—I developed dynamic loading indicators for music analysis, implemented background job monitoring and status updates, and created error states and retry mechanisms for failed processes.'
       },
       {
         type: 'image',
         content: algoImage1.src,
-        alt: 'Algorhythm Campaign Management Interface',
-        caption: 'Campaign management dashboard showing real-time processing states and analytics'
-      },
-      {
-        type: 'text',
-        content: '## Role & Responsibilities\n\n### Frontend Development\n\n• Built complete React.js application architecture from scratch\n\n• Implemented responsive UI components for music upload, campaign management, and results visualization\n\n• Developed real-time loading states and error handling for asynchronous music processing\n\n• Created dynamic dashboard for displaying campaign results and analytics\n\n### UI/UX Design & Prototyping\n\n• Created comprehensive design frameworks using Adobe XD\n\n• Designed mockups for the "Sound Overview" interface showing campaign analytics\n\n• Established visual design patterns and component library\n\n### Backend Integration & API Development\n\n• Collaborated with backend developer to design and implement REST API endpoints\n\n• Integrated Supabase authentication and database services\n\n• Implemented file upload functionality for audio processing\n\n• Designed data flow architecture for campaign management and results display'
+        alt: 'Campaign Management interface',
+        caption: 'Earlier design of the campaign management interface'
       },
       {
         type: 'image',
         content: algoImage2.src,
-        alt: 'Algorhythm Sound Overview Analytics',
-        caption: 'Sound Overview interface displaying campaign results and similarity scores'
+        alt: 'Campaign Management Interface',
+        caption: ' '
       },
+      // {
+      //   type: 'text',
+      //   content: 'The analytics dashboard tied everything together by providing users with actionable insights. I built a comprehensive "Sound Overview" interface displaying campaign results, implemented data visualization for song recommendations and similarity scores, and created responsive layouts that worked seamlessly across different screen sizes.'
+      // },
       {
         type: 'text',
-        content: '## Technical Implementation\n\n### Technology Stack\n\n• Frontend: React.js, Next.js, TypeScript\n\n• Styling: CSS3, responsive design principles\n\n• Backend Integration: Supabase, REST APIs\n\n• Design Tools: Adobe XD for prototyping and mockups\n\n• Development Tools: Git, GitHub, Chrome DevTools\n\n### Key Features Developed\n\n**1. User Authentication System**\n\n• Implemented secure login/register functionality with Supabase\n\n• Created protected routes and session management\n\n• Added error handling for authentication edge cases\n\n**2. Campaign Management Interface**\n\n• Built intuitive upload modal for music file submission\n\n• Implemented campaign creation and management workflows\n\n• Added campaign deletion functionality with proper confirmation flows\n\n**3. Real-time Processing States**\n\n• Developed dynamic loading indicators for music analysis\n\n• Implemented background job monitoring and status updates\n\n• Created error states and retry mechanisms for failed processes\n\n**4. Analytics Dashboard**\n\n• Built comprehensive "Sound Overview" interface displaying campaign results\n\n• Implemented data visualization for song recommendations and similarity scores\n\n• Created responsive layouts for different screen sizes'
+        content: 'The project presented several significant challenges. The first was handling complex data integration—the backend API returned intricate nested data structures containing campaigns, songs, and videos that needed to be efficiently displayed in the frontend. To solve this, I created detailed data mapping diagrams using Eraser.io to visualize the data structure, collaborated with the backend developer to optimize API responses for frontend consumption, and implemented TypeScript interfaces to ensure type safety throughout the application.'
       },
       {
         type: 'image',
         content: algoImage3.src,
-        alt: 'Algorhythm Upload and Processing Flow',
-        caption: 'Music upload interface with real-time processing states and progress indicators'
+        alt: 'Progress',
+        caption: 'Part of the progress to create a “card fan out” animation for a redesign of the platform'
       },
       {
         type: 'text',
-        content: '## Challenges & Solutions\n\n### Challenge 1: Complex Data Integration\n\nThe backend API returned complex nested data structures (campaigns, songs, videos) that needed to be efficiently displayed in the frontend.\n\n**Solution:**\n\n• Created detailed data mapping diagrams using Eraser.io to visualize data structure\n\n• Collaborated with backend developer to optimize API responses for frontend consumption\n\n• Implemented TypeScript interfaces to ensure type safety\n\n### Challenge 2: Asynchronous Music Processing\n\nMusic analysis could take several minutes, requiring sophisticated loading states and error handling.\n\n**Solution:**\n\n• Implemented background job polling system\n\n• Created dynamic UI states showing processing progress\n\n• Built automatic refresh mechanisms to update campaign status\n\n### Challenge 3: Cross-browser Compatibility Issues\n\nVisual inconsistencies appeared across different browsers and screen resolutions, particularly with CSS box shadows.\n\n**Solution:**\n\n• Established comprehensive testing protocol across Chrome and Safari\n\n• Used deployment previews to test fixes in production-like environments\n\n• Implemented fallback styling for browser-specific issues'
+        content: 'Asynchronous music processing proved to be another major challenge, as music analysis could take several minutes, requiring sophisticated loading states and error handling. I addressed this by implementing a background job polling system, creating dynamic UI states that showed processing progress in real-time, and building automatic refresh mechanisms to update campaign status without requiring user intervention.'
+      },
+      {
+        type: 'text',
+        content: 'Cross-browser compatibility issues also emerged during development, with visual inconsistencies appearing across different browsers and screen resolutions, particularly with CSS box shadows. I established a comprehensive testing protocol across Chrome and Safari, used deployment previews to test fixes in production-like environments, and implemented fallback styling for browser-specific issues.'
       },
       {
         type: 'image',
         content: algoImage4.src,
         alt: 'Algorhythm Design Framework',
-        caption: 'Adobe XD design framework showing component library and visual design patterns'
+        caption: 'Newest design framework'
       },
       {
-        type: 'text',
-        content: '## Results & Impact\n\n### Technical Achievements\n\n• Successfully delivered a complete, production-ready frontend application\n\n• Built robust authentication system handling edge cases and error states\n\n• Implemented complex data visualization for music analytics\n\n• Created responsive, cross-browser compatible user interface\n\n### Process Improvements\n\n• Established efficient frontend-backend collaboration workflow\n\n• Created reusable component library and design framework\n\n• Implemented comprehensive testing and deployment pipeline\n\n### Business Impact\n\n• Delivered MVP on schedule, enabling team to launch beta testing\n\n• Created intuitive user experience that simplified complex music discovery workflows\n\n• Built scalable architecture supporting future feature development'
-      },
-      {
-        type: 'text',
-        content: '## Conclusion\n\nThe Algorhythm project showcased my ability to build complex, user-facing applications from concept to production. Working closely with the backend team, I successfully translated technical requirements into intuitive user experiences while maintaining high code quality and meeting aggressive deadlines.\n\nThis project demonstrated my proficiency in modern frontend development practices, collaborative software development, and my ability to bridge the gap between design and implementation. The successful launch of the platform validated our technical architecture decisions and user experience design choices.\n\nKey takeaways from this project include the importance of clear communication in distributed teams, the value of iterative development with frequent user testing, and the critical role of robust error handling in user-facing applications dealing with complex backend processes.'
+        type: 'image',
+        content: algoImage5.src,
+        alt: 'Algorhythm Design Framework',
+        caption: ' '
       },
     ]
   },
@@ -212,27 +285,16 @@ export const caseStudies: CaseStudy[] = [
         type: 'text',
         content: 'Jaco Beach Luxe is a premier luxury vacation rental property located in the stunning coastal town of Jaco, Costa Rica. The client needed a complete brand identity that would communicate the property\'s upscale positioning while capturing the relaxed, tropical essence of the location.'
       },
-      {
-        type: 'image',
-        content: jblImage1.src,
-        alt: 'Jaco Beach Luxe Logo Design',
-        caption: 'Primary logo design featuring coastal and tropical design elements'
-      },
+
       {
         type: 'text',
         content: 'I developed a sophisticated brand identity that balances luxury with approachability. The visual language draws inspiration from coastal elements, tropical botanicals, and the natural beauty of Jaco Beach, creating a brand that feels both elevated and inviting.'
       },
       {
         type: 'image',
-        content: jblImage2.src,
-        alt: 'Jaco Beach Luxe Brand Identity System',
-        caption: 'Complete brand identity system with color palette and typography'
-      },
-      {
-        type: 'image',
         content: jblImage3.src,
         alt: 'Jaco Beach Luxe Visual Applications',
-        caption: 'Brand applications across various marketing materials'
+        caption: ' '
       },
       {
         type: 'text',
@@ -242,20 +304,20 @@ export const caseStudies: CaseStudy[] = [
         type: 'image',
         content: jblImage4.src,
         alt: 'Jaco Beach Luxe Icon Set',
-        caption: 'Custom iconography designed for the brand'
+        caption: ' '
       },
       {
         type: 'image',
         content: jblImage5.src,
         alt: 'Jaco Beach Luxe Pattern Design',
-        caption: 'Branded patterns inspired by tropical elements'
+        caption: ' '
       },
-      {
-        type: 'image',
-        content: jblImage6.src,
-        alt: 'Jaco Beach Luxe Stationery',
-        caption: 'Business stationery and collateral design'
-      },
+      // {
+      //   type: 'image',
+      //   content: jblImage6.src,
+      //   alt: 'Jaco Beach Luxe Stationery',
+      //   caption: 'Business stationery and collateral design'
+      // },
       {
         type: 'image',
         content: jblImage7.src,
@@ -265,8 +327,14 @@ export const caseStudies: CaseStudy[] = [
       {
         type: 'image',
         content: jblImage8.src,
-        alt: 'Jaco Beach Luxe Brand Guide',
-        caption: 'Comprehensive brand guidelines for consistent application'
+        alt: 'Videos and graphics for reels and tiktok',
+        caption: 'Videos and graphics for reels and tiktok'
+      },
+      {
+        type: 'image',
+        content: jblImage2.src,
+        alt: 'Instagram layout',
+        caption: 'Instagram layout'
       },
     ]
   },

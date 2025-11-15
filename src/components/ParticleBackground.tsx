@@ -89,8 +89,8 @@ const ParticleBackground = ({
 
     const updateContainerPosition = () => {
       setContainerPosition(prev => {
-        const targetX = (mousePosition.x - window.innerWidth / 2) * 0.06;
-        const targetY = (mousePosition.y - window.innerHeight / 2) * 0.06;
+        const targetX = (mousePosition.x - window.innerWidth / 2) * 0.15;
+        const targetY = (mousePosition.y - window.innerHeight / 2) * 0.15;
 
         // Ease-out interpolation - faster at first, then slows down
         const easeOutFactor = 0.08;
@@ -189,7 +189,7 @@ const ParticleBackground = ({
         className="absolute top-0 left-1/2 transform -translate-x-1/2"
         style={{
           width: '1200px',
-          height: '700px',
+          height: '900px',
           background: `
             radial-gradient(50% 50% at 50% 50%,
               ${colors.gradientColorCenter} 0%,
@@ -202,21 +202,24 @@ const ParticleBackground = ({
           borderRadius: '50%',
           top: '-400px',
           pointerEvents: 'none',
+          transform: `translate(-50%, 0) translate(${containerPosition.x}px, ${containerPosition.y}px)`,
+          transition: 'none',
         }}
       />
 
+
       {/* Particle container */}
-      <div
+      {/* <div
         ref={containerRef}
         className="absolute top-0 left-1/2 transform -translate-x-1/2"
         style={{
           width: '600px',
           height: '400px',
           transform: `translate(-50%, 0) translate(${containerPosition.x}px, ${containerPosition.y}px)`,
-          transition: 'none', // Using manual smooth interpolation instead
+          transition: 'none', 
         }}
       >
-        {/* Particles */}
+
         {particles.map(particle => (
           <div
             key={particle.id}
@@ -232,7 +235,7 @@ const ParticleBackground = ({
             }}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

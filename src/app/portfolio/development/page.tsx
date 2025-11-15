@@ -6,8 +6,10 @@ import {development} from '@/data/development';
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
+import PortfolioCard from "@/components/PortfolioCard";
 import { motion } from "motion/react"
 import { easeInOut } from "motion";
+import AnimatedHeader from "@/components/AnimatedHeader";
 
 
 function Development() {
@@ -54,19 +56,35 @@ function Development() {
 
   return (
     <>
-      <Nav />
 
       <div className="portfolio">
 
         <section className="title">
           <br/><br/>
-          <h2>
-          Creative online experiences that align with your brand image and message
-          </h2>
+          <AnimatedHeader
+          as="h2"
+          style={{ pointerEvents: 'auto' }}
+        >
+          Creative online <span className="pixel">experiences</span> that align with your brand image and message
+        </AnimatedHeader>
         </section>
 
         <div className="filter-container">
           <div className="filter-tags">
+            <button
+              className={`filter-tag ${filter === "all" ? 'selected' : ''}`}
+              onClick={() => setFilter("all")}
+            >
+              all
+              {filter === "all" && (
+                <span className="clear-filter-inline" onClick={(e) => {
+                  e.stopPropagation();
+                  setFilter("all");
+                }}>
+                  ✕
+                </span>
+              )}
+            </button>
             {allTags.map(tag => (
               <button
                 key={tag}
@@ -91,29 +109,11 @@ function Development() {
           <ul>
             {projects.map(item =>
               item.filtered === true ?
-              <li key={item.name} className='card'>
-                  <button
-
-                    className='card_path'
-                    onClick={() => toggleItem(item)}
-                    >
-                    <h1>https:// {item.title}</h1>
-                    <p>meta: {item.short}</p>
-                    <div className="card_preview">
-                      <img src={item.preview.src} alt={item.name} />
-                      <img src={item.overlay.src} alt={item.name} />
-                    </div>
-
-                    <div className="tools-container">
-                      {item.projectType === "client" && (
-                        <span className="tool-tag client-tag">✦ Client ✦</span>
-                      )}
-                      {item.tools.split(',').map((tool: string, index: number) => (
-                        <span key={index} className="tool-tag">{tool.trim()}</span>
-                      ))}
-                    </div>
-                  </button>
-
+              <li key={item.name}>
+                <PortfolioCard
+                  project={item}
+                  onClick={() => toggleItem(item)}
+                />
               </li> : ""
             )}
           </ul>
@@ -126,8 +126,6 @@ function Development() {
             )}
 
       </div>
-
-      <Footer />
 
     </>
   );

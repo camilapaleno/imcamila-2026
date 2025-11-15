@@ -1,9 +1,10 @@
 "use client"
 
-import Image from "next/image";
-import Link from "next/link";
 import { caseStudies } from "@/data/caseStudies";
 import { useState, useRef } from "react";
+
+import AnimatedHeader from "./AnimatedHeader";
+import CaseStudyCard from "./CaseStudyCard";
 
 export default function FeaturedCaseStudies() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -36,60 +37,57 @@ export default function FeaturedCaseStudies() {
   return (
     <section className="featured-case-studies">
       <div className="featured-case-studies-header">
-        <h2>Case studies from creative teams.</h2>
-        <p className="featured-subtitle">See how professionals across film, fashion, branding, and design are using FLORA.</p>
+        <AnimatedHeader
+          as="h2"
+          style={{ pointerEvents: 'auto' }}
+          delay={0.5}
+        >
+          <span className="pixel">case studies</span>
+        </AnimatedHeader>
+        <AnimatedHeader
+          as="h4"
+          style={{ pointerEvents: 'auto' }}
+          delay={0.5}
+        >
+        See how professionals across film, fashion, branding, and design are using FLORA.
+        </AnimatedHeader>
+        
       </div>
 
       <div className="case-studies-gallery-container">
-        <button
-          className="gallery-nav-btn left"
-          onClick={() => scroll('left')}
-          disabled={scrollPosition === 0}
-        >
-          ←
-        </button>
 
         <div className="case-studies-gallery" ref={scrollContainerRef}>
           {featuredStudies.map((study) => (
-            <Link
-              href={`/case-studies/${study.id}`}
+            <CaseStudyCard
               key={study.id}
-              className="case-study-glass-card"
-            >
-              <div className="card-image-container">
-                <Image
-                  src={study.coverImage}
-                  alt={study.title}
-                  fill
-                  className="card-image"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-
-              <div className="card-tools-overlay">
-                {study.tools && study.tools.split(',').map((tool, index) => (
-                  <span key={index} className="card-tools">{tool.trim()}</span>
-                ))}
-              </div>
-
-              <div className="card-info-overlay">
-                <div className="card-glass-bg"></div>
-                <div className="card-text-content">
-                  <h3 className="card-title">{study.title}</h3>
-                  <p className="card-description">{study.shortDescription}</p>
-                </div>
-              </div>
-            </Link>
+              id={study.id}
+              title={study.title}
+              shortDescription={study.shortDescription}
+              coverImage={study.coverImage}
+              tools={study.tools}
+            />
           ))}
         </div>
 
-        <button
-          className="gallery-nav-btn right"
-          onClick={() => scroll('right')}
-        >
-          →
-        </button>
-      </div>
+
+
+
+      </div>        
+      <div className="gallery-nav-btns">
+          <button
+            className="gallery-nav-btn left"
+            onClick={() => scroll('left')}
+            disabled={scrollPosition === 0}
+          >
+            ←
+          </button>
+          <button
+            className="gallery-nav-btn right"
+            onClick={() => scroll('right')}
+          >
+            →
+          </button>
+        </div>
     </section>
   );
 }

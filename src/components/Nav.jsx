@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import '@/app/globals.css';
-import cam from '@/image/cam.png'
+import cam from '@/image/CAM-logo2.png'
 import { useTheme } from '@/context/ThemeContext';
 import { useState, useEffect } from 'react';
 
@@ -19,14 +19,14 @@ function Nav() {
     <>
       <div className="nav">
         <div className="top">
-          <Link href={"/"}>camilas/studio</Link>
+          <Link href={"/"}><span className='pixel'>camila</span> <span className="emoji">m</span></Link>
         </div>
 
         <div className="links">
           <ul>
 
             <li>
-              <Link href="/case-studies">past clients + case studies</Link>
+              <Link href="/case-studies">case studies</Link>
             </li>
             <li>
               <Link href="/portfolio/development">website development showcase</Link>
@@ -77,7 +77,7 @@ function Nav() {
             <li>
               <button onClick={toggleTheme} className="theme-toggle">
                 <span className='emoji'>
-                  {mounted ? (theme === 'light' ? 'e' : 'd') : 'e'}
+                  {mounted ? (theme === 'light' ? 'F' : 'G') : 'F'}
                 </span>
               </button>
             </li>
