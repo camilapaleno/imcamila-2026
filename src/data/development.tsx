@@ -20,7 +20,8 @@ import taskOverlay from "@/image/preview-taskhelper-hover.gif";
 import storyPreview from "@/image/preview-storyteller.jpg";
 import storyOverlay from "@/image/preview-storyteller-hover.gif";
 import marsyPreview from "@/image/preview-marsy2.png";
-import bwSitePreview from "@/image/preview-bw_site2.png";
+import bwSitePreview from "@/image/preview-bw_site3.png";
+import jblSitePreview from "@/image/preview-jacobeachluxe1.jpg";
 import bwSiteOverlay from "@/image/preview-bw_site-hover.gif";
 import sagePreview from "@/image/preview-sagesocial5.png";
 import sageOverlay from "@/image/preview-sagesocial-hover.gif";
@@ -40,9 +41,11 @@ import sketchtoPNGPreview from "@/image/preview-sketchtopng.png";
 import instaGridPreview from "@/image/preview-instagrid.png";
 import recipeKeeperPreview from "@/image/preview-recipekeeper.png";
 import junkPreview from "@/image/preview-junk1.png";
-import cafeBluePreview from "@/image/preview-cafeblue.png";
+import cafeBluePreview from "@/image/preview-cafeblue1.png";
+import cafeBlueOverlay from "@/image/preview-cafeblue-overlay.gif";
 import tomSketchPreview from "@/image/preview-tomsketch.png";
 import satinEightsPreview from "@/image/preview-satineights.png";
+import satinEightsOverlay from "@/image/preview-satineights-overlay.gif";
 
 export const development = [
   // 1. Satin Eights
@@ -53,7 +56,7 @@ export const development = [
     long: "Website for a production company.",
     tools: "Squarespace, CSS, JS",
     preview: satinEightsPreview,
-    overlay: overlay,
+    overlay: satinEightsOverlay,
     category: ["all", "websites", "squarespace", "made for: creatives", "my favorites!"],
     projectType: "client",
     website: 'none',
@@ -72,7 +75,7 @@ export const development = [
     tools: "Squarespace, CSS",
     preview: japonicaPreview,
     overlay: japonicaOverlay,
-    category: ["all", "websites", "squarespace", "made for: creatives", "made for: professionals", "my favorites!"],
+    category: ["all", "websites", "squarespace", "made for: professionals", "my favorites!"],
     projectType: "client",
     website: 'https://www.japonicadining.com/',
     github: 'none',
@@ -105,7 +108,7 @@ export const development = [
     long: "Cafe Blue is the cafe attached to the boutique villas \"Blue Window\". Cafe Blue and Blue Window are located minutes from the beach in Junquillal, Costa Rica.",
     tools: "React",
     preview: cafeBluePreview,
-    overlay: overlay,
+    overlay: cafeBlueOverlay,
     category: ["all", "react", "websites", "made for: professionals", "my favorites!"],
     projectType: "client",
     website: 'none',
@@ -123,7 +126,7 @@ export const development = [
     tools: "React",
     preview: tomSketchPreview,
     overlay: overlay,
-    category: ["all", "react", "web apps", "fun"],
+    category: ["all", "react", "websites", "fun", "my favorites!"],
     projectType: "personal",
     website: 'none',
     github: 'none',
@@ -154,10 +157,10 @@ export const development = [
     title: "Jaco Beach Luxe",
     short: "Lodgify website for a boutique hotel",
     long: "A Lodgify website made for a boutique hotel in Jaco Beach.",
-    tools: "Lodgify, CSS",
-    preview: bwSitePreview,
-    overlay: bwSiteOverlay,
-    category: ["all", "websites", "lodgify", "made for: professionals", "my favorites!"],
+    tools: "Lodgify, CSS, Photography",
+    preview: jblSitePreview,
+    overlay: overlay,
+    category: ["all", "websites", "lodgify", "made for: professionals", "my favorites!", "my photography"],
     projectType: "client",
     website: 'none',
     github: 'none',
@@ -165,20 +168,20 @@ export const development = [
     gallery: 'none',
     embed: 'none',
   },
-  // 8. Sara Moorad
+  // 10. Blue Window
   {
-    name: "Sara Moorad",
-    title: "Sara Moorad",
-    short: "Website for a luxury wedding accessory company.",
-    long: "Elegant, simple ecommerce website for a luxury wedding accessory company.",
-    tools: "Squarespace, CSS",
-    preview: saraPreview,
-    overlay: saraOverlay,
-    category: ["all", "websites", "squarespace", "made for: professionals", "my favorites!"],
+    name: "BW Site Squarespace website for a boutique hotel",
+    title: "Blue Window",
+    short: "Squarespace website for a boutique hotel",
+    long: "A Squarespace website made for a boutique hotel in Junquillal.",
+    tools: "Squarespace, CSS, Photography",
+    preview: bwSitePreview,
+    overlay: bwSiteOverlay,
+    category: ["all", "websites", "squarespace", "made for: professionals", "my favorites!", "my photography"],
     projectType: "client",
-    website: 'https://www.saramoorad.com/',
+    website: 'https://www.bluewindowcr.com/',
     github: 'none',
-    youtube: 'https://www.youtube.com/embed/ZNb42W2kYU0?si=cpZkpQPaW_MNj4q_&amp;controls=0',
+    youtube: 'https://www.youtube.com/embed/DtYKBmj3kmo?si=nOvwLVOiTdXhS7hL&amp;controls=0',
     gallery: 'none',
     embed: 'none',
   },
@@ -200,23 +203,24 @@ export const development = [
     embed: 'https://devondonisdp.github.io/devondonisdp/index.html',
     featured: true,
   },
-  // 10. Blue Window
-  {
-    name: "BW Site Squarespace website for a boutique hotel",
-    title: "Blue Window",
-    short: "Squarespace website for a boutique hotel",
-    long: "A Squarespace website made for a boutique hotel in Junquillal.",
-    tools: "Squarespace, CSS",
-    preview: bwSitePreview,
-    overlay: bwSiteOverlay,
-    category: ["all", "websites", "squarespace", "made for: professionals", "my favorites!"],
-    projectType: "client",
-    website: 'https://www.bluewindowcr.com/',
-    github: 'none',
-    youtube: 'https://www.youtube.com/embed/DtYKBmj3kmo?si=nOvwLVOiTdXhS7hL&amp;controls=0',
-    gallery: 'none',
-    embed: 'none',
-  },
+    // 8. Sara Moorad
+    {
+      name: "Sara Moorad",
+      title: "Sara Moorad",
+      short: "Website for a luxury wedding accessory company.",
+      long: "Elegant, simple ecommerce website for a luxury wedding accessory company.",
+      tools: "Squarespace, CSS",
+      preview: saraPreview,
+      overlay: saraOverlay,
+      category: ["all", "websites", "squarespace", "made for: professionals", "my favorites!"],
+      projectType: "client",
+      website: 'https://www.saramoorad.com/',
+      github: 'none',
+      youtube: 'https://www.youtube.com/embed/ZNb42W2kYU0?si=cpZkpQPaW_MNj4q_&amp;controls=0',
+      gallery: 'none',
+      embed: 'none',
+    },
+
   {
     name: "KD Photography",
     title: "KD Photography",
@@ -275,7 +279,7 @@ export const development = [
     tools: "React",
     preview: sketchtoPNGPreview,
     overlay: overlay,
-    category: ["all", "react", "web apps", "fun", "my favorites!"],
+    category: ["all", "react", "web apps", "fun"],
     projectType: "personal",
     website: 'none',
     github: 'none',
@@ -292,7 +296,7 @@ export const development = [
     tools: "React",
     preview: pixelArtPreview,
     overlay: overlay,
-    category: ["all", "react", "web apps", "fun", "my favorites!"],
+    category: ["all", "react", "web apps", "fun"],
     projectType: "personal",
     website: 'none',
     github: 'none',
@@ -377,7 +381,7 @@ export const development = [
     tools: "React",
     preview: instaGridPreview,
     overlay: overlay,
-    category: ["all", "react", "web apps", "fun", "my favorites!"],
+    category: ["all", "react", "web apps", "fun"],
     projectType: "personal",
     website: 'none',
     github: 'none',
@@ -438,22 +442,22 @@ export const development = [
     gallery: 'none',
     embed: 'none',
   },
-  {
-    name: "Algorhythm - AI audio analysis to boost artists' digital marketing strategy",
-    title: "Algorhythm",
-    short: "AI audio analysis to boost artists' digital marketing strategy.",
-    long: "AI audio analysis tool that boosts artists' digital marketing strategy made with Next.js and Typescript. Currently working with a backend team to integrate AI. View the landing page preview below.",
-    tools: "Next.js, Typscript",
-    preview: algoPreview,
-    overlay: algoOverlay,
-    category: ["all", "web apps", "react", "ai integration"],
-    projectType: "client",
-    website: 'https://algorhythm.app/',
-    github: 'none',
-    youtube: 'none',
-    gallery: 'none',
-    embed: 'https://algorhythm.app/',
-  },
+  // {
+  //   name: "Algorhythm - AI audio analysis to boost artists' digital marketing strategy",
+  //   title: "Algorhythm",
+  //   short: "AI audio analysis to boost artists' digital marketing strategy.",
+  //   long: "AI audio analysis tool that boosts artists' digital marketing strategy made with Next.js and Typescript. Currently working with a backend team to integrate AI. View the landing page preview below.",
+  //   tools: "Next.js, Typscript",
+  //   preview: algoPreview,
+  //   overlay: algoOverlay,
+  //   category: ["all", "web apps", "react", "ai integration"],
+  //   projectType: "client",
+  //   website: 'https://algorhythm.app/',
+  //   github: 'none',
+  //   youtube: 'none',
+  //   gallery: 'none',
+  //   embed: 'https://algorhythm.app/',
+  // },
   {
     name: "ATD Squarespace website for a construction + design firm",
     title: "ATD Ventures",

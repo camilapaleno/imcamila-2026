@@ -199,23 +199,88 @@ body {
 
 @media (max-width: 1080px) {
   .nav {
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
-  .nav span, .nav a {
-    padding-bottom: 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .links ul {
-    flex-wrap: wrap;
+  /* Hide desktop navigation */
+  .desktop-links {
+    display: none !important;
   }
 
-  .links ul li{
-    padding-bottom: 10px;
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu span.open:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .hamburger-menu span.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu span.open:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  /* Mobile Menu Dropdown */
+  .mobile-menu-dropdown {
+    display: block !important;
+    position: fixed;
+    top: 80px;
+    right: 2rem;
+    z-index: 1;
+  }
+
+  .mobile-menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-menu-dropdown ul li {
+    text-align: right;
+  }
+
+  .mobile-menu-dropdown ul li a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+  }
+
+  .mobile-menu-dropdown ul li a:hover {
+    opacity: 0.7;
   }
 }
 
@@ -329,6 +394,15 @@ body {
   height: 12px;
 }
 
+/* Mobile Navigation - Hidden by default on desktop */
+.mobile-nav {
+  display: none;
+}
+
+.mobile-menu-dropdown {
+  display: none;
+}
+
 
 /* ============================================
    HOME PAGE
@@ -347,10 +421,10 @@ body {
     align-items: start;
     justify-content: center;
     padding: 0;
-    margin: 0 auto;
+    margin: -94px auto 0 auto;
     position: relative;
     z-index: 1;
-    min-height: calc(100vh - 94px);
+    min-height: calc(100vh);
   }
   
   .home section {
@@ -403,42 +477,41 @@ body {
   @media (max-width: 1080px) {
     .home {
       position: relative;
-      padding-top: 8rem;
+      padding: 2rem;
     }
-    .home section.hero h1{
-      justify-content: center;
-      font-size: 10vw;
-    }
-    .home section.hero h1 span {
-      width: fit-content;
-      padding: 0px 20px;
-    }
-    .home h4 {
-      text-align: center;
-      margin: 0 auto;
-    }
-    .home img.arra {
-      margin: 0 auto;
-    }
+
+    .home section.hero {
   
-    .home h2 {
-      margin: 0 auto;
-      font-size: 6vw;
-      text-align: center;
-      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0 auto 0 auto;
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh);
+    }
+
+    .home section.hero h1 {
+      font-size: 3rem;
+
+    }
+    .home section.hero h3 {
+      font-size: 2rem;
+
     }
     
   }
   
   @media (max-width: 540px) {
-    .home section.hero h1{
-      justify-content: center;
-      font-size: 12vw;
-      margin: 0 1rem;
+    .home section.hero h1 {
+      font-size: 2rem;
+
     }
-    .home section.hero h1 span {
-      width: fit-content;
-      padding: 0px 10px;
+    .home section.hero h3 {
+      font-size: 1rem;
+
     }
   }
 
@@ -458,6 +531,7 @@ body {
 
 .portfolio {
   margin-top: 100px;
+  padding: 2rem;
 }
 
 .portfolio .portfolio__container {
@@ -507,9 +581,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  .portfolio__container {
-    padding: 20px;
-  }
+
   .portfolio__container ul li{
     width: 99%;
   }
@@ -937,6 +1009,7 @@ body {
   width: 100%;
   padding: 0;
   margin-top: 100px;
+
 }
 
 .case-study-header {
@@ -979,7 +1052,7 @@ body {
 .text-block {
   max-width: 800px;
   margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .text-block p {
@@ -1033,6 +1106,7 @@ body {
 .all-case-studies-page {
   width: 100%;
   margin-top: 100px;
+  padding: 2rem;
 }
 
 .case-studies-page-header {
@@ -1057,7 +1131,6 @@ body {
 
 .case-studies-grid-wrapper {
   width: 100%;
-  padding: 2rem;
 }
 
 /* ============================================
@@ -1209,6 +1282,12 @@ button.portfolio-card-glass {
 }
 
 @media (max-width: 640px) {
+  .featured-websites-section {
+    width: 100%;
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 6rem 0 8rem 0;
+  }
   .portfolio-card-preview {
     height: 300px;
   }
@@ -1646,6 +1725,12 @@ button.portfolio-card-glass {
   left: 0;
 }
 
+@media (max-width: 1080px) {
+  .featured-websites-browser {
+    display: none;
+  }
+}
+
 /* ============================================
    FEATURED CASE STUDIES
    ============================================ */
@@ -1702,125 +1787,7 @@ button.portfolio-card-glass {
   height: 400px;
 }
 
-@media (max-width: 1080px) {
-  .case-study-header h1 {
-    font-size: 48px;
-  }
 
-  .text-block p {
-    font-size: 16px;
-  }
-
-  .case-studies-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-websites-content {
-    flex-direction: column;
-  }
-
-  .website-thumbnails {
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .website-thumbnails .thumbnail {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media (max-width: 640px) {
-  .case-study-header {
-    padding: 2rem 1rem;
-  }
-
-  .case-study-header h1 {
-    font-size: 36px;
-  }
-
-  .text-block {
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  .all-case-studies-page {
-    margin-top: 80px;
-  }
-
-  .case-studies-page-header {
-    padding: 0;
-  }
-
-  .case-studies-grid-wrapper {
-    padding: 1rem;
-  }
-
-  .featured-case-studies {
-    padding: 2rem 1rem;
-  }
-
-  .featured-case-studies-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .featured-case-studies h2 {
-    font-size: 32px;
-  }
-
-  .featured-websites {
-    padding: 2rem 1rem;
-  }
-
-  .featured-websites-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .featured-websites h2 {
-    font-size: 32px;
-  }
-
-  .website-thumbnails .thumbnail {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
-  }
-
-  .website-preview-container {
-    min-height: 400px;
-  }
-
-  .featured-websites-browser {
-    padding: 2rem 1rem;
-  }
-
-  .featured-websites-browser h2 {
-    font-size: 32px;
-  }
-
-  .browser-tab {
-    min-width: 140px;
-    max-width: 180px;
-    padding: 6px 12px;
-  }
-
-  .browser-tab .tab-title {
-    font-size: 12px;
-  }
-
-  .url-controls {
-    display: none;
-  }
-
-  .url-input {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
-}
 
 /* Glass Effect Gallery */
 .featured-case-studies-header h2.featured-title {
@@ -2038,6 +2005,153 @@ h3.card-title{
 }
 
 @media (max-width: 1080px) {
+  .featured-case-studies {
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 4rem 0 8rem 0;
+  }
+  .featured-case-studies-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featured-case-studies-header h2,
+  .browser-websites-header h2,
+  .featured-websites-header h2,
+  .case-studies-page-header h1,
+  .portfolio .title h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .featured-case-studies-header h4,
+  .browser-websites-header h4,
+  .featured-websites-header h4,
+  .case-studies-page-header h4,
+  .portfolio .title h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .browser-websites-header,
+  .featured-websites-header,
+  .case-studies-page-header,
+  .portfolio .title {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .gallery-nav-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+
+
+
+  .case-study-header h1 {
+    font-size: 48px;
+  }
+
+  .text-block p {
+    font-size: 16px;
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-websites-content {
+    flex-direction: column;
+  }
+
+  .website-thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .website-thumbnails .thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study-header {
+    padding: 2rem 1rem;
+  }
+
+  .case-study-header h1 {
+    font-size: 36px;
+  }
+
+  .text-block {
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+
+  .all-case-studies-page {
+    margin-top: 80px;
+  }
+
+  .case-studies-page-header {
+    padding: 0;
+  }
+
+  .case-studies-grid-wrapper {
+    padding: 1rem;
+  }
+
+
+  .featured-websites {
+    padding: 2rem 1rem;
+  }
+
+  .website-thumbnails .thumbnail {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  .website-preview-container {
+    min-height: 400px;
+  }
+
+  .featured-websites-browser {
+    padding: 2rem 1rem;
+  }
+
+  .featured-websites-browser h2 {
+    font-size: 32px;
+  }
+
+  .browser-tab {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 6px 12px;
+  }
+
+  .browser-tab .tab-title {
+    font-size: 12px;
+  }
+
+  .url-controls {
+    display: none;
+  }
+
+  .url-input {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 1080px) {
   .case-studies-gallery {
     padding: 1rem;
   }
@@ -2063,10 +2177,6 @@ h3.card-title{
 }
 
 @media (max-width: 640px) {
-  .featured-case-studies-header h2 {
-    font-size: 36px;
-  }
-
   .featured-subtitle {
     font-size: 16px;
   }
@@ -2102,6 +2212,26 @@ h3.card-title{
     width: 36px;
     height: 36px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .featured-case-studies-header h2,
+  .browser-websites-header h2,
+  .featured-websites-header h2,
+  .case-studies-page-header h1,
+  .portfolio .title h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .featured-case-studies-header h4,
+  .browser-websites-header h4,
+  .featured-websites-header h4,
+  .case-studies-page-header h4,
+  .portfolio .title h4 {
+    font-size: 1rem;
+    text-align: center;
   }
 }
 

@@ -10,6 +10,7 @@ function Nav() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -22,16 +23,19 @@ function Nav() {
           <Link href={"/"}><span className='pixel'>camila</span> <span className="emoji">m</span></Link>
         </div>
 
-        <div className="links">
+        {/* Desktop Navigation */}
+        <div className="links desktop-links">
           <ul>
-
             <li>
               <Link href="/case-studies">case studies</Link>
             </li>
             <li>
               <Link href="/portfolio/development">website development showcase</Link>
             </li>
-            <li className="dropdown">
+            <li>
+              <Link href="mailto:hi@imcamila.dev">email me</Link>
+            </li>
+{/*             <li className="dropdown">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="dropdown-toggle"
@@ -73,7 +77,7 @@ function Nav() {
                   </a>
                 </div>
               )}
-            </li>
+            </li> */}
             <li>
               <button onClick={toggleTheme} className="theme-toggle">
                 <span className='emoji'>
@@ -83,8 +87,42 @@ function Nav() {
             </li>
           </ul>
         </div>
+
+        {/* Mobile Navigation */}
+        <div className="mobile-nav">
+          <button onClick={toggleTheme} className="theme-toggle mobile-theme-toggle">
+            <span className='emoji'>
+              {mounted ? (theme === 'light' ? 'F' : 'G') : 'F'}
+            </span>
+          </button>
+          <button
+            className="hamburger-menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+            <span className={mobileMenuOpen ? 'open' : ''}></span>
+          </button>
+        </div>
       </div>
 
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-dropdown">
+          <ul>
+            <li>
+              <Link href="/case-studies" onClick={() => setMobileMenuOpen(false)}>case studies</Link>
+            </li>
+            <li>
+              <Link href="/portfolio/development" onClick={() => setMobileMenuOpen(false)}>website development showcase</Link>
+            </li>
+            <li>
+              <a href="mailto:hi@imcamila.dev">email me</a>
+            </li>
+          </ul>
+        </div>
+      )}
     </>
   );
 }

@@ -22,7 +22,6 @@ import FeaturedWebsites from "@/components/FeaturedWebsites";
 import BrowserDemo from "@/components/BrowserDemo";
 import { demos } from "@/data/demos";
 import ParticleBackground from "@/components/ParticleBackground";
-import PixelOverlay from "@/components/PixelOverlay";
 import AnimatedHeader from "@/components/AnimatedHeader";
 import Footer from "@/components/Footer";
 import dynamic from 'next/dynamic';

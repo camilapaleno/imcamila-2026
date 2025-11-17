@@ -30,7 +30,7 @@ const BrowserDemo = ({ projects }) => {
           style={{ pointerEvents: 'auto' }}
           delay={0.5}
         >
-          See how professionals across film, fashion, branding, and design are using FLORA.
+          Demos for websites I've made with unique user interactions.
         </AnimatedHeader>
       </div>
 

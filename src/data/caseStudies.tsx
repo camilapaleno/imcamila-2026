@@ -12,13 +12,13 @@ import sageImage1 from "@/image/casestudy-sage-1.gif";
 import sageImage2 from "@/image/casestudy-sage-2.gif";
 import sageImage3 from "@/image/casestudy-sage-3.gif";
 import devonPreview from "@/image/preview-devon4.png";
-import algoPreview from "@/image/preview-algo.jpg";
+import algoPreview from "@/image/preview-algo1.jpeg";
 import algoImage1 from "@/image/casestudy-algo-11.png";
 import algoImage2 from "@/image/casestudy-algo-12.png";
 import algoImage3 from "@/image/algo-casestudy-10.gif";
 import algoImage4 from "@/image/algo-casestudy-8.png";
 import algoImage5 from "@/image/algo-casestudy-9.png";
-import jacoPreview from "@/image/preview-jacobeachluxe.png";
+import jacoPreview from "@/image/preview-jacobeachluxe1.jpg";
 import jblImage1 from "@/image/jbl-casestudy-1.png";
 import jblImage2 from "@/image/jbl-casestudy-2.png";
 import jblImage3 from "@/image/jbl-casestudy-3.png";
@@ -28,6 +28,14 @@ import jblImage6 from "@/image/jbl-casestudy-6.png";
 import jblImage7 from "@/image/jbl-casestudy-7.png";
 import jblImage8 from "@/image/jbl-casestudy-8.png";
 import particlePreview from "@/image/particle-casestudy-1.png";
+import cafeBluePreview from "@/image/cafeblue-casestudy-cover.jpg";
+import cafeBlueImage1 from "@/image/cafeblue-casestudyArtboard 2@2x-80.jpg";
+import cafeBlueImage2 from "@/image/cafeblue-casestudyArtboard 2_1@2x-80.jpg";
+import cafeBlueImage3 from "@/image/cafeblue-casestudyArtboard 2_3@2x-80.jpg";
+import cafeBlueImage4 from "@/image/cafeblue-casestudyArtboard 12@2x-80.jpg";
+import cafeBlueImage5 from "@/image/cafeblue-casestudyArtboard 14@2x-80.jpg";
+import cafeBlueImage6 from "@/image/cafeblue-casestudyArtboard 14_1@2x-801.jpg";
+import cafeBlueImage7 from "@/image/cafeblue-casestudyArtboard 15@2x-80.jpg";
 
 export interface CaseStudyContentBlock {
   type: 'text' | 'image';
@@ -279,7 +287,7 @@ export const caseStudies: CaseStudy[] = [
     category: ["branding", "luxury", "hospitality"],
     client: "Jaco Beach Luxe",
     year: "2024",
-    tools: "Adobe Illustrator, Photoshop, InDesign",
+    tools: "Adobe Illustrator, Photoshop, Lightroom",
     contentBlocks: [
       {
         type: 'text',
@@ -335,6 +343,85 @@ export const caseStudies: CaseStudy[] = [
         content: jblImage2.src,
         alt: 'Instagram layout',
         caption: 'Instagram layout'
+      },
+    ]
+  },
+  {
+    id: "cafe-blue",
+    title: "Cafe Blue",
+    shortDescription: "Complete branding and web design for a modern coffee shop, blending artisanal charm with digital presence.",
+    coverImage: cafeBluePreview,
+    featured: true,
+    category: ["branding", "web design", "hospitality"],
+    client: "Cafe Blue",
+    year: "2024",
+    tools: "Adobe Illustrator, Photoshop, Lightroom",
+    contentBlocks: [
+      {
+        type: 'text',
+        content: 'Cafe Blue is a contemporary coffee shop that celebrates the art of coffee making while creating a warm, inviting space for the community. The client needed a complete brand identity that would capture the essence of artisanal coffee culture while appealing to a modern, design-conscious audience.'
+      },
+      {
+        type: 'text',
+        content: 'The challenge was to develop a brand that felt both premium and approachable—sophisticated enough to communicate quality coffee expertise, yet welcoming enough for daily visits. The branding needed to work seamlessly across physical spaces, packaging, and digital touchpoints.'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage1.src,
+        alt: 'Cafe Blue Brand Identity',
+        caption: 'Primary logo and brand identity system'
+      },
+      {
+        type: 'text',
+        content: 'I developed a comprehensive visual identity centered around clean typography, a carefully curated color palette inspired by coffee tones, and versatile design elements that could adapt across various applications. The branding system includes logo variations, custom patterns, and a flexible template system for seasonal promotions.'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage2.src,
+        alt: 'Cafe Blue Brand Applications',
+        caption: 'Brand applications across various touchpoints'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage3.src,
+        alt: 'Cafe Blue Packaging Design',
+        caption: 'Product packaging and merchandise design'
+      },
+      {
+        type: 'text',
+        content: 'The menu design became a key brand touchpoint. I created layouts that highlight the coffee offerings while maintaining visual hierarchy and readability. The design system allows for easy updates as seasonal drinks and specials rotate throughout the year.'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage4.src,
+        alt: 'Cafe Blue Menu Design',
+        caption: 'Menu design with clear hierarchy and seasonal flexibility'
+      },
+      {
+        type: 'text',
+        content: 'For the digital presence, I designed a clean, mobile-first website that showcases the menu, location information, and brand story. The design prioritizes quick access to essential information while creating an immersive brand experience that reflects the physical cafe atmosphere.'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage5.src,
+        alt: 'Cafe Blue Website Design',
+        caption: 'Mobile-first website design with intuitive navigation'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage6.src,
+        alt: 'Cafe Blue Digital Touchpoints',
+        caption: 'Social media templates and digital marketing materials'
+      },
+      {
+        type: 'text',
+        content: 'The final brand system provides Cafe Blue with a cohesive identity that translates beautifully across all customer touchpoints—from the first Instagram post to the coffee cup in hand. The flexible design system allows the brand to grow and evolve while maintaining its core visual identity.'
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage7.src,
+        alt: 'Cafe Blue Complete Brand System',
+        caption: 'Complete brand system showing cohesive applications'
       },
     ]
   },

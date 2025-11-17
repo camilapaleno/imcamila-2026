@@ -48,8 +48,7 @@ export default function FeaturedCaseStudies() {
           as="h4"
           style={{ pointerEvents: 'auto' }}
           delay={0.5}
-        >
-        See how professionals across film, fashion, branding, and design are using FLORA.
+        >Write ups about recent projects I've done, including the challenges and solutions.
         </AnimatedHeader>
         
       </div>

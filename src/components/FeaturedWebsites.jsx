@@ -32,14 +32,14 @@ const FeaturedWebsites = () => {
           as="h2"
           style={{ pointerEvents: 'auto' }}
         >
-          <span className="pixel">recent</span>
+          <span className="pixel">recent projects</span>
         </AnimatedHeader>
         <AnimatedHeader
           as="h4"
           style={{ pointerEvents: 'auto' }}
           delay={0.5}
         >
-          A selection of recent client and personal projects.
+          A couple recent client projects.
         </AnimatedHeader>
       </div>
 

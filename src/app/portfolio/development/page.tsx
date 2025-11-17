@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
-import {builders} from '@/data/builders';
 import {development} from '@/data/development';
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -13,14 +12,14 @@ import AnimatedHeader from "@/components/AnimatedHeader";
 
 
 function Development() {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("my favorites!");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [projects, setProjects] = useState<any[]>([]);
   const [allTags, setAllTags] = useState<string[]>([]);
 
   useEffect(() => {
     // Combine both builders and development projects
-    const allProjects = [...builders, ...development];
+    const allProjects = [...development];
     setProjects(allProjects);
 
     // Extract all unique tags
@@ -38,7 +37,7 @@ function Development() {
   useEffect(() => {
     setProjects([]);
 
-    const allProjects = [...builders, ...development];
+    const allProjects = [...development];
     const filtered = allProjects.map(p => ({
       ...p,
       filtered: p.category.includes(filter)

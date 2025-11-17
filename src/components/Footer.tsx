@@ -47,6 +47,7 @@ export default function Footer() {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a>
             <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Email</a>
           </div>
 
           <div className="footer-column">
