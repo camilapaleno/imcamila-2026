@@ -73,6 +73,20 @@ export default function CaseStudy({ caseStudy }: CaseStudyProps) {
                 {block.caption && <p className="image-caption">{block.caption}</p>}
               </div>
             );
+          } else if (block.type === 'video') {
+            return (
+              <div key={index} className="content-block image-block">
+                <video
+                  src={block.content}
+                  controls
+                  className="full-width-image"
+                  style={{ width: '100%', height: 'auto' }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+                {block.caption && <p className="image-caption">{block.caption}</p>}
+              </div>
+            );
           }
           return null;
         })}

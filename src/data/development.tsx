@@ -99,6 +99,7 @@ export const development = [
     youtube: 'https://www.youtube.com/embed/SBAL6_zoB7Y?si=Ct2cXKwZqlSswMAR&amp;controls=0',
     gallery: 'none',
     embed: 'none',
+    caseStudy: 'sage-social-marketing',
   },
   // 4. Cafe Blue
   {
@@ -116,6 +117,7 @@ export const development = [
     youtube: 'none',
     gallery: 'none',
     embed: 'https://camilapaleno.github.io/cafe-blue',
+    caseStudy: 'cafe-blue',
   },
   // 5. Tom Sketch
   {
@@ -167,6 +169,7 @@ export const development = [
     youtube: 'https://www.youtube.com/embed/Zn972Dl2XBI?si=CHgHuoDsW3p5NWg_&amp;controls=0',
     gallery: 'none',
     embed: 'none',
+    caseStudy: 'jaco-beach-luxe',
   },
   // 10. Blue Window
   {

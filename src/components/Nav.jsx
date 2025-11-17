@@ -30,7 +30,7 @@ function Nav() {
               <Link href="/case-studies">case studies</Link>
             </li>
             <li>
-              <Link href="/portfolio/development">website development showcase</Link>
+              <Link href="/portfolio/development">website showcase</Link>
             </li>
             <li>
               <Link href="mailto:hi@imcamila.dev">email me</Link>
@@ -115,7 +115,7 @@ function Nav() {
               <Link href="/case-studies" onClick={() => setMobileMenuOpen(false)}>case studies</Link>
             </li>
             <li>
-              <Link href="/portfolio/development" onClick={() => setMobileMenuOpen(false)}>website development showcase</Link>
+              <Link href="/portfolio/development" onClick={() => setMobileMenuOpen(false)}>website showcase</Link>
             </li>
             <li>
               <a href="mailto:hi@imcamila.dev">email me</a>

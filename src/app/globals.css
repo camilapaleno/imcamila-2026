@@ -158,11 +158,16 @@ body {
   mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
 }
 
 .nav .top span{
   font-size: 1.25rem;
   line-height: 0;
+}
+
+.nav .top {
+  pointer-events: auto;
 }
 
 .nav span, .nav a {
@@ -214,6 +219,7 @@ body {
     display: flex !important;
     align-items: center;
     gap: 1rem;
+    pointer-events: auto;
   }
 
   /* Hamburger Menu Styles */
@@ -257,6 +263,7 @@ body {
     top: 80px;
     right: 2rem;
     z-index: 1;
+    pointer-events: auto;
   }
 
   .mobile-menu-dropdown ul {
@@ -291,6 +298,7 @@ body {
   justify-content: center;
   list-style: none;
   gap: 2rem;
+  pointer-events: auto;
 }
 
 .links ul li a,
@@ -790,14 +798,27 @@ body {
   color: var(--text);
 }
 
+.project-info-panel .info .tools-info {
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.project-info-panel .info .tools-info strong {
+  font-weight: 600;
+}
+
 .project-info-panel .info .see-full-site {
   padding: 5px;
   margin: 10px 0 0 0;
-  background-color: transparent;
+  background-color: var(--card);
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: fit-content;
   color: var(--text);
   font-weight: bold;
@@ -806,8 +827,14 @@ body {
   transition: background-color 0.2s;
 }
 
+.project-info-panel .info .see-full-site svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .project-info-panel .info .see-full-site:hover {
-  background-color: var(--card);
+  background-color: var(--hover-bg);
 }
 
 /* Right Iframe Container */

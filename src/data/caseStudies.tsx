@@ -38,10 +38,10 @@ import cafeBlueImage6 from "@/image/cafeblue-casestudyArtboard 14_1@2x-801.jpg";
 import cafeBlueImage7 from "@/image/cafeblue-casestudyArtboard 15@2x-80.jpg";
 
 export interface CaseStudyContentBlock {
-  type: 'text' | 'image';
-  content: string; // For text: the actual text content. For images: the image path/import
-  alt?: string; // For images: alt text
-  caption?: string; // Optional caption for images
+  type: 'text' | 'image' | 'video';
+  content: string; // For text: the actual text content. For images/videos: the file path/import
+  alt?: string; // For images/videos: alt text or description
+  caption?: string; // Optional caption for images/videos
 }
 
 export interface CaseStudy {
@@ -190,7 +190,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "algorhythm",
     title: "Algorhythm",
-    shortDescription: "Frontend development and UI/UX design for a music discovery platform that analyzes user-uploaded tracks to recommend similar songs and artists.",
+    shortDescription: "Frontend development and UI/UX design for a marketing research platform.",
     coverImage: algoPreview,
     featured: true,
     category: ["frontend development", "ux/ui design", "music", "full-stack"],
@@ -200,7 +200,7 @@ export const caseStudies: CaseStudy[] = [
     contentBlocks: [
       {
         type: 'text',
-        content: 'Algorhythm is an innovative platform that. As the frontend developer and UX/UI Designer, I was responsible for building the entire user interface from scratch, creating design frameworks, and collaborating closely with the backend team to integrate complex data processing workflows.'
+        content: 'Algorhythm analyzes an artist’s song, scans social content from similar tracks, and surfaces proven strategies to spark content ideas and boost conversion. As the frontend developer and UX/UI Designer, I was responsible for building the entire user interface from scratch, creating design frameworks, and collaborating closely with the backend team to integrate complex data processing workflows.'
       },
       {
         type: 'text',
@@ -293,27 +293,38 @@ export const caseStudies: CaseStudy[] = [
         type: 'text',
         content: 'Jaco Beach Luxe is a premier luxury vacation rental property located in the stunning coastal town of Jaco, Costa Rica. The client needed a complete brand identity that would communicate the property\'s upscale positioning while capturing the relaxed, tropical essence of the location.'
       },
-
+      {
+        type: 'image',
+        content: jblImage7.src,
+        alt: 'Jaco Beach Luxe Marketing Materials',
+        caption: 'Print and digital marketing material designs'
+      },
       {
         type: 'text',
         content: 'I developed a sophisticated brand identity that balances luxury with approachability. The visual language draws inspiration from coastal elements, tropical botanicals, and the natural beauty of Jaco Beach, creating a brand that feels both elevated and inviting.'
+      },
+
+      {
+        type: 'text',
+        content: 'All photographs and videos were also taken by me.'
       },
       {
         type: 'image',
         content: jblImage3.src,
         alt: 'Jaco Beach Luxe Visual Applications',
-        caption: ' '
+        caption: ''
+      },      
+      {
+        type: 'image',
+        content: jblImage4.src,
+        alt: 'Jaco Beach Luxe Icon Set',
+        caption: ''
       },
       {
         type: 'text',
         content: 'The branding package included logo design, color palette, typography system, photography guidelines, and marketing collateral templates. The design system is flexible enough to work across digital platforms, print materials, and physical property signage, ensuring a cohesive brand experience at every touchpoint.'
       },
-      {
-        type: 'image',
-        content: jblImage4.src,
-        alt: 'Jaco Beach Luxe Icon Set',
-        caption: ' '
-      },
+
       {
         type: 'image',
         content: jblImage5.src,
@@ -326,12 +337,7 @@ export const caseStudies: CaseStudy[] = [
       //   alt: 'Jaco Beach Luxe Stationery',
       //   caption: 'Business stationery and collateral design'
       // },
-      {
-        type: 'image',
-        content: jblImage7.src,
-        alt: 'Jaco Beach Luxe Marketing Materials',
-        caption: 'Print and digital marketing material designs'
-      },
+
       {
         type: 'image',
         content: jblImage8.src,
@@ -343,6 +349,12 @@ export const caseStudies: CaseStudy[] = [
         content: jblImage2.src,
         alt: 'Instagram layout',
         caption: 'Instagram layout'
+      },
+      {
+        type: 'video',
+        content: '/videos/jbl-casestudy-website.mp4',
+        alt: 'Jaco Beach Luxe Website Walkthrough',
+        caption: 'Website design and user experience'
       },
     ]
   },
@@ -362,14 +374,16 @@ export const caseStudies: CaseStudy[] = [
         content: 'Cafe Blue is a contemporary coffee shop that celebrates the art of coffee making while creating a warm, inviting space for the community. The client needed a complete brand identity that would capture the essence of artisanal coffee culture while appealing to a modern, design-conscious audience.'
       },
       {
-        type: 'text',
-        content: 'The challenge was to develop a brand that felt both premium and approachable—sophisticated enough to communicate quality coffee expertise, yet welcoming enough for daily visits. The branding needed to work seamlessly across physical spaces, packaging, and digital touchpoints.'
+        type: 'image',
+        content: cafeBlueImage6.src,
+        alt: 'Cafe Blue Digital Touchpoints',
+        caption: 'Logo design and photography.'
       },
       {
         type: 'image',
-        content: cafeBlueImage1.src,
-        alt: 'Cafe Blue Brand Identity',
-        caption: 'Primary logo and brand identity system'
+        content: cafeBlueImage5.src,
+        alt: 'Cafe Blue Website Design',
+        caption: ''
       },
       {
         type: 'text',
@@ -377,51 +391,38 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: 'image',
-        content: cafeBlueImage2.src,
-        alt: 'Cafe Blue Brand Applications',
-        caption: 'Brand applications across various touchpoints'
+        content: cafeBlueImage1.src,
+        alt: 'Cafe Blue Brand Identity',
+        caption: ''
+      },
+      {
+        type: 'image',
+        content: cafeBlueImage4.src,
+        alt: 'Colors',
+        caption: ''
+      },
+      {
+        type: 'text',
+        content: 'Photographs and video for use on social media and website.'
       },
       {
         type: 'image',
         content: cafeBlueImage3.src,
         alt: 'Cafe Blue Packaging Design',
-        caption: 'Product packaging and merchandise design'
+        caption: ''
       },
-      {
-        type: 'text',
-        content: 'The menu design became a key brand touchpoint. I created layouts that highlight the coffee offerings while maintaining visual hierarchy and readability. The design system allows for easy updates as seasonal drinks and specials rotate throughout the year.'
-      },
-      {
-        type: 'image',
-        content: cafeBlueImage4.src,
-        alt: 'Cafe Blue Menu Design',
-        caption: 'Menu design with clear hierarchy and seasonal flexibility'
-      },
-      {
-        type: 'text',
-        content: 'For the digital presence, I designed a clean, mobile-first website that showcases the menu, location information, and brand story. The design prioritizes quick access to essential information while creating an immersive brand experience that reflects the physical cafe atmosphere.'
-      },
-      {
-        type: 'image',
-        content: cafeBlueImage5.src,
-        alt: 'Cafe Blue Website Design',
-        caption: 'Mobile-first website design with intuitive navigation'
-      },
-      {
-        type: 'image',
-        content: cafeBlueImage6.src,
-        alt: 'Cafe Blue Digital Touchpoints',
-        caption: 'Social media templates and digital marketing materials'
-      },
-      {
-        type: 'text',
-        content: 'The final brand system provides Cafe Blue with a cohesive identity that translates beautifully across all customer touchpoints—from the first Instagram post to the coffee cup in hand. The flexible design system allows the brand to grow and evolve while maintaining its core visual identity.'
-      },
+
       {
         type: 'image',
         content: cafeBlueImage7.src,
         alt: 'Cafe Blue Complete Brand System',
-        caption: 'Complete brand system showing cohesive applications'
+        caption: 'Photographs and video for use on social media and website.'
+      },
+      {
+        type: 'video',
+        content: '/videos/cafeblue-casestudy-website.mp4',
+        alt: 'Cafe Blue Website Walkthrough',
+        caption: 'Website design and user experience'
       },
     ]
   },

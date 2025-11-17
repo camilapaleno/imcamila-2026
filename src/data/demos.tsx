@@ -64,7 +64,7 @@ export const demos = [
     preview: junkPreview,
     embed: 'https://camilapaleno.github.io/junk-journal',
     pointer: {
-      text: "scrapbook.digital",
+      text: "drag these around",
       side: 'left' as const,
       position: 50,
       dotColor: '#f9a825'
