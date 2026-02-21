@@ -262,8 +262,13 @@ body {
     position: fixed;
     top: 80px;
     right: 2rem;
-    z-index: 1;
+    z-index: 9999;
     pointer-events: auto;
+    background: var(--background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
   }
 
   .mobile-menu-dropdown ul {
@@ -502,7 +507,7 @@ body {
     }
 
     .home section.hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
 
     }
     .home section.hero h3 {
@@ -514,7 +519,7 @@ body {
   
   @media (max-width: 540px) {
     .home section.hero h1 {
-      font-size: 2rem;
+      font-size: 2.75rem;
 
     }
     .home section.hero h3 {
@@ -677,7 +682,7 @@ body {
 
 @media (max-width: 640px) {
   .filter-container {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0;
   }
 }
 
@@ -2128,11 +2133,12 @@ h3.card-title{
   }
 
   .case-studies-page-header {
-    padding: 0;
+    padding: 2rem 0;
+    margin-right: 0;
   }
 
   .case-studies-grid-wrapper {
-    padding: 1rem;
+    padding: 0;
   }
 
 
@@ -2175,6 +2181,27 @@ h3.card-title{
   .url-input {
     font-size: 11px;
     padding: 4px 8px;
+  }
+
+  .case-studies-page-header h2 {
+    font-size: 2.75rem;
+    text-align: left;
+  }
+
+  .case-studies-page-header {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .portfolio .title {
+    padding-top: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .portfolio .title h2 {
+    font-size: 2.75rem;
+    text-align: left;
   }
 }
 
@@ -2246,10 +2273,19 @@ h3.card-title{
   .featured-case-studies-header h2,
   .browser-websites-header h2,
   .featured-websites-header h2,
-  .case-studies-page-header h1,
-  .portfolio .title h2 {
+  .case-studies-page-header h1 {
     font-size: 1.5rem;
     text-align: center;
+  }
+
+  .portfolio .title h2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .portfolio .title {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .featured-case-studies-header h4,
