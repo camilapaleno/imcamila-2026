@@ -34,7 +34,7 @@ import japonicaOverlay from "@/image/preview-japonica-hover.gif";
 import thirdPreview from "@/image/recent-thirdplace.png";
 import thirdOverlay from "@/image/preview-thirdplace-hover.gif";
 import beechjetPreview from "@/image/preview-beechjet4.png";
-import mediaArchivePreview from "@/image/preview-mediaArchive-3.jpg";
+import mediaArchivePreview from "@/image/preview-mediaarchive-3.jpg";
 import mediaArchiveOverlay from "@/image/mediaArchive-overlay.gif";
 import kdPreview from "@/image/preview-kd.jpeg";
 import pixelArtPreview from "@/image/preview-pixelart.png";
