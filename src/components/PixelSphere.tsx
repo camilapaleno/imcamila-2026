@@ -8,6 +8,7 @@ interface Pixel {
   mesh: THREE.Mesh;
   velocity: THREE.Vector3;
   initialPos: THREE.Vector3;
+  baseColor: THREE.Color;
 }
 
 export default function PixelSphere() {
@@ -17,6 +18,8 @@ export default function PixelSphere() {
   const previousMouseRef = useRef({ x: 0, y: 0 });
   const rotationRef = useRef({ x: 0, y: 0 });
   const rotationVelocityRef = useRef({ x: 0, y: 0 });
+  const mouseWorldPosRef = useRef(new THREE.Vector3(10000, 10000, 10000));
+  const mouseRayRef = useRef(new THREE.Raycaster());
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -43,7 +46,13 @@ export default function PixelSphere() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.5;
     containerRef.current.appendChild(renderer.domElement);
+
+    // Add ambient light for MeshStandardMaterial
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+    scene.add(ambientLight);
 
     // Create pixel sphere with particles throughout volume
     const pixelSize = 2;
@@ -66,10 +75,12 @@ export default function PixelSphere() {
       const geometry = new THREE.BoxGeometry(pixelSize, pixelSize, pixelSize);
       // Color based on theme: dark text color (#463535) for light mode, white for dark mode
       const pixelColor = theme === 'light' ? 0x7dd926 : 0xffffff;
-      const material = new THREE.MeshBasicMaterial({
+      const material = new THREE.MeshStandardMaterial({
         color: pixelColor,
-        transparent: false,
-        opacity: 1.0
+        emissive: pixelColor,
+        emissiveIntensity: 0,
+        metalness: 0.1,
+        roughness: 0.5
       });
       const pixel = new THREE.Mesh(geometry, material);
       pixel.position.set(x, y, z);
@@ -85,7 +96,8 @@ export default function PixelSphere() {
       pixels.push({
         mesh: pixel,
         velocity: velocity,
-        initialPos: new THREE.Vector3(x, y, z)
+        initialPos: new THREE.Vector3(x, y, z),
+        baseColor: new THREE.Color(pixelColor)
       });
     }
 
@@ -96,6 +108,15 @@ export default function PixelSphere() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
+      // Convert mouse position to normalized device coordinates (-1 to +1)
+      const mouse = new THREE.Vector2(
+        (e.clientX / window.innerWidth) * 2 - 1,
+        -(e.clientY / window.innerHeight) * 2 + 1
+      );
+
+      // Update raycaster for hover detection
+      mouseRayRef.current.setFromCamera(mouse, camera);
+
       if (!isDraggingRef.current) return;
 
       const deltaX = e.clientX - previousMouseRef.current.x;
@@ -111,9 +132,16 @@ export default function PixelSphere() {
       isDraggingRef.current = false;
     };
 
+    const handleMouseLeave = () => {
+      // Reset mouse ray to far away when mouse leaves
+      mouseRayRef.current.ray.origin.set(10000, 10000, 10000);
+      mouseRayRef.current.ray.direction.set(0, 0, -1);
+    };
+
     renderer.domElement.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
+    renderer.domElement.addEventListener('mouseleave', handleMouseLeave);
 
     // Animation
     let animationId: number;
@@ -138,6 +166,55 @@ export default function PixelSphere() {
       pixels.forEach((pixelData) => {
         const pixel = pixelData.mesh;
         const vel = pixelData.velocity;
+
+        // Get world position of pixel
+        const worldPos = new THREE.Vector3();
+        pixel.getWorldPosition(worldPos);
+
+        // Calculate perpendicular distance from pixel to mouse ray
+        const distToMouse = mouseRayRef.current.ray.distanceToPoint(worldPos);
+        const hoverRadius = 200;
+
+        // Apply hover effects
+        if (distToMouse < hoverRadius) {
+          const strength = 1 - (distToMouse / hoverRadius);
+
+          // Glow effect - use emissive intensity for true glow
+          const material = pixel.material as THREE.MeshStandardMaterial;
+          material.emissiveIntensity = strength * 3.0;
+
+          // Also brighten the base color
+          const brightnessFactor = 1 + strength * 2.0;
+          material.color.copy(pixelData.baseColor).multiplyScalar(brightnessFactor);
+
+          // Scale up the pixel for extra emphasis
+          const scale = 1;
+          pixel.scale.set(scale, scale, scale);
+
+          // Repulsion effect - push away from mouse ray
+          // Find closest point on ray to pixel
+          const closestPoint = new THREE.Vector3();
+          mouseRayRef.current.ray.closestPointToPoint(worldPos, closestPoint);
+
+          // Push away in world space, then convert to local space for velocity
+          const repulsionDirWorld = worldPos.clone().sub(closestPoint).normalize();
+          const repulsionForce = repulsionDirWorld.multiplyScalar(strength * 1.0);
+
+          // Transform repulsion force to local space
+          scene.updateMatrixWorld();
+          const inverseMatrix = new THREE.Matrix4().copy(scene.matrixWorld).invert();
+          repulsionForce.applyMatrix4(inverseMatrix).sub(
+            new THREE.Vector3(0, 0, 0).applyMatrix4(inverseMatrix)
+          );
+
+          vel.add(repulsionForce);
+        } else {
+          // Reset to base color, size, and no glow when not hovering
+          const material = pixel.material as THREE.MeshStandardMaterial;
+          material.color.copy(pixelData.baseColor);
+          material.emissiveIntensity = 0;
+          pixel.scale.set(1, 1, 1);
+        }
 
         // Move pixel
         pixel.position.x += vel.x;
@@ -192,6 +269,7 @@ export default function PixelSphere() {
       renderer.domElement.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
+      renderer.domElement.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationId);
       if (containerRef.current && renderer.domElement.parentNode === containerRef.current) {
         containerRef.current.removeChild(renderer.domElement);

@@ -34,7 +34,8 @@ import japonicaOverlay from "@/image/preview-japonica-hover.gif";
 import thirdPreview from "@/image/recent-thirdplace.png";
 import thirdOverlay from "@/image/preview-thirdplace-hover.gif";
 import beechjetPreview from "@/image/preview-beechjet4.png";
-import mediaArchivePreview from "@/image/preview-mediaarchive.png";
+import mediaArchivePreview from "@/image/preview-mediaArchive-3.jpg";
+import mediaArchiveOverlay from "@/image/mediaArchive-overlay.gif";
 import kdPreview from "@/image/preview-kd.jpeg";
 import pixelArtPreview from "@/image/preview-pixelart.png";
 import sketchtoPNGPreview from "@/image/preview-sketchtopng.png";
@@ -46,8 +47,27 @@ import cafeBlueOverlay from "@/image/preview-cafeblue-overlay.gif";
 import tomSketchPreview from "@/image/preview-tomsketch.png";
 import satinEightsPreview from "@/image/preview-satineights.png";
 import satinEightsOverlay from "@/image/preview-satineights-overlay.gif";
+import recipePreview from "@/image/recipe-preview-1.jpg";
 
 export const development = [
+  // Recipe Keeper
+  {
+    name: "Recipe Keeper",
+    title: "Recipe Keeper",
+    short: "Website to keep my recipes.",
+    long: "Website to keep my recipes.",
+    tools: "react, CSS",
+    preview: recipePreview,
+    overlay: overlay,
+    category: ["all", "react", "fun", "made for: creatives", "my favorites!"],
+    projectType: "personal",
+    website: 'https://camilapaleno.github.io/recipe-keeper/',
+    github: 'none',
+    youtube: 'none',
+    gallery: 'none',
+    embed: 'https://camilapaleno.github.io/recipe-keeper/',
+    featured: false,
+  },
   // 1. Satin Eights
   {
     name: "Satin Eights",
@@ -153,6 +173,23 @@ export const development = [
     gallery: 'none',
     embed: 'https://camilapaleno.github.io/junk-journal',
   },
+      // 14. Media Archive
+      {
+        name: "Personal Project",
+        title: "Media Archive",
+        short: "Squarespace website to keep track of all my digital media",
+        long: "A website made to keep track of all my digital media.",
+        tools: "Squarespace, CSS, JS",
+        preview: mediaArchivePreview,
+        overlay: mediaArchiveOverlay,
+        category: ["all", "websites", "squarespace", "fun", "made for: creatives", "my favorites!"],
+        projectType: "personal",
+        website: 'https://pcmila.squarespace.com/',
+        github: 'none',
+        youtube: 'https://www.youtube.com/embed/YN5c0STyWcU?si=APKEpl2QCUBchDdg&amp;controls=0',
+        gallery: 'none',
+        embed: 'none',
+      },
   // 7. Jaco Beach Luxe
   {
     name: "Lodgify website for a boutique hotel",
@@ -323,23 +360,6 @@ export const development = [
     youtube: 'none',
     gallery: 'none',
     embed: 'https://camilapaleno.github.io/nei-portfolio/home/',
-  },
-  // 14. Media Archive
-  {
-    name: "Personal Project",
-    title: "Media Archive",
-    short: "Squarespace website to keep track of all my digital media",
-    long: "A website made to keep track of all my digital media.",
-    tools: "Squarespace, CSS, JS",
-    preview: mediaArchivePreview,
-    overlay: overlay,
-    category: ["all", "websites", "squarespace", "fun", "made for: creatives", "my favorites!"],
-    projectType: "personal",
-    website: 'https://pcmila.squarespace.com/',
-    github: 'none',
-    youtube: 'https://www.youtube.com/embed/SBAL6_zoB7Y?si=Ct2cXKwZqlSswMAR&amp;controls=0',
-    gallery: 'none',
-    embed: 'none',
   },
   // 15. Code Stack
   {
