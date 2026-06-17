@@ -434,10 +434,10 @@ body {
     align-items: start;
     justify-content: center;
     padding: 0;
-    margin: -94px auto 0 auto;
+    margin: 0px auto 0 auto;
     position: relative;
     z-index: 1;
-    min-height: calc(100vh);
+    min-height: calc(50vh);
   }
   
   .home section {
@@ -449,7 +449,7 @@ body {
     max-width: 640px;
     margin: 0 auto;
     line-height: 110%;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: var(--font);
     color: var(--text);
     font-weight: normal;
@@ -464,6 +464,7 @@ body {
 
   .home section.hero h3 {
     max-width: 640px;
+    font-size: 1rem;
     margin: 0 auto;
     font-family: var(--font);
     color: var(--text);
@@ -475,6 +476,16 @@ body {
     word-break: keep-all;
     pointer-events: none;
     user-select: none;
+  }
+
+  .home section.hero h3 {
+    display: flex;
+    align-items: center;
+
+  }
+  .home section.hero svg {
+    width: 18px;
+    margin-left: 5px;
   }
   
   span.pixel {

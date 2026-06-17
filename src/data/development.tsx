@@ -51,23 +51,23 @@ import recipePreview from "@/image/recipe-preview-1.jpg";
 
 export const development = [
   // Recipe Keeper
-  {
-    name: "Recipe Keeper",
-    title: "Recipe Keeper",
-    short: "Website to keep my recipes.",
-    long: "Website to keep my recipes.",
-    tools: "react, CSS",
-    preview: recipePreview,
-    overlay: overlay,
-    category: ["all", "react", "fun", "made for: creatives", "my favorites!"],
-    projectType: "personal",
-    website: 'https://camilapaleno.github.io/recipe-keeper/',
-    github: 'none',
-    youtube: 'none',
-    gallery: 'none',
-    embed: 'https://camilapaleno.github.io/recipe-keeper/',
-    featured: false,
-  },
+  // {
+  //   name: "Recipe Keeper",
+  //   title: "Recipe Keeper",
+  //   short: "Website to keep my recipes.",
+  //   long: "Website to keep my recipes.",
+  //   tools: "react, CSS",
+  //   preview: recipePreview,
+  //   overlay: overlay,
+  //   category: ["all", "react", "fun", "made for: creatives", "my favorites!"],
+  //   projectType: "personal",
+  //   website: 'https://camilapaleno.github.io/recipe-keeper/',
+  //   github: 'none',
+  //   youtube: 'none',
+  //   gallery: 'none',
+  //   embed: 'https://camilapaleno.github.io/recipe-keeper/',
+  //   featured: false,
+  // },
   // 1. Satin Eights
   {
     name: "Satin Eights",

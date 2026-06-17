@@ -25,6 +25,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 import AnimatedHeader from "@/components/AnimatedHeader";
 import Footer from "@/components/Footer";
 import dynamic from 'next/dynamic';
+import caseStudies from "@/data/caseStudies";
 
 const ThreeBackground = dynamic(() => import('@/components/ThreeBackground'), {
   ssr: false,
@@ -50,7 +51,7 @@ export default function Home() {
           style={{ pointerEvents: 'auto' }}
           delay={0}
         >
-         My name is Camila <span className="emoji">I</span>
+         Hi, my name is Camila.
         </AnimatedHeader>
 
         <AnimatedHeader
@@ -58,8 +59,20 @@ export default function Home() {
           style={{ pointerEvents: 'auto' }}
           delay={0.5}
         >
-          I <span className="pixel">connect</span> your brand identity to your <span className="pixel">online presence</span><span className="emoji">z</span>
+          I'm a UX/UI<span className="pixel"> designer</span> and <span className="pixel">website developer</span> based in Los Angeles.
         </AnimatedHeader>
+
+        <AnimatedHeader
+          as="h3"
+          style={{ pointerEvents: 'auto' }}
+          delay={0.5}
+        >
+          See my case studies 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+          </svg>
+        </AnimatedHeader>
+
 
       </section>
 

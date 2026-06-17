@@ -10,7 +10,7 @@ export default function AllCaseStudiesPage() {
         <AnimatedHeader
           as="h2"
           style={{ pointerEvents: 'auto' }}
-          ><span className="pixel">Case Studies</span>
+          ><span className="pixel">case studies</span>
         </AnimatedHeader>
         <AnimatedHeader
           as="h4"

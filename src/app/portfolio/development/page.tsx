@@ -64,7 +64,7 @@ function Development() {
           as="h2"
           style={{ pointerEvents: 'auto' }}
         >
-          Creative online <span className="pixel">experiences</span> that align with your brand image and message
+          Work with <span className="pixel">past clients</span> and personal projects
         </AnimatedHeader>
         </section>
 

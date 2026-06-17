@@ -20,7 +20,7 @@ function Nav() {
     <>
       <div className="nav">
         <div className="top">
-          <Link href={"/"}><span className='pixel'>camila</span> <span className="emoji">m</span></Link>
+          <Link href={"/"}>camila's resume <span className='pixel'></span> <span className="emoji">m</span></Link>
         </div>
 
         {/* Desktop Navigation */}

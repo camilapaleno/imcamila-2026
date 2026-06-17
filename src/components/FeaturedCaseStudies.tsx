@@ -36,7 +36,7 @@ export default function FeaturedCaseStudies() {
 
   return (
     <section className="featured-case-studies">
-      <div className="featured-case-studies-header">
+      {/* <div className="featured-case-studies-header">
         <AnimatedHeader
           as="h2"
           style={{ pointerEvents: 'auto' }}
@@ -51,7 +51,7 @@ export default function FeaturedCaseStudies() {
         >Write ups about recent projects I've done, including the challenges and solutions.
         </AnimatedHeader>
         
-      </div>
+      </div> */}
 
       <div className="case-studies-gallery-container">
 
@@ -78,13 +78,17 @@ export default function FeaturedCaseStudies() {
             onClick={() => scroll('left')}
             disabled={scrollPosition === 0}
           >
-            ←
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
           </button>
           <button
             className="gallery-nav-btn right"
             onClick={() => scroll('right')}
           >
-            →
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
           </button>
         </div>
     </section>
