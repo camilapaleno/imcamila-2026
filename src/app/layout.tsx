@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Camila Paleno Web Development & Design",
+  title: "Camila's Resume | Web Development & Design",
   description: "Connecting web development with brand design. I work with web builders and Javascript frameworks for websites and Adobe CS, Lottie, and Blender for graphic creation to create a web site or application that tells your story.",
 };
 
